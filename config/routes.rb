@@ -1,7 +1,6 @@
 SurfEd::Application.routes.draw do
   devise_for :users
 
-
   resources :invite, except: [:destroy, :update, :show]
   
   # The priority is based upon order of creation:

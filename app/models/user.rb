@@ -15,12 +15,12 @@ class User < ActiveRecord::Base
   attr_accessible :name, :role, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-
   has_many :questions, :dependent => :destroy
   has_many :answers, :dependent => :destroy
 
-  def has_role?(r)
-    self.role == r.to_s
+  before_create do 
+    |user| user.role = "user"
   end
+
 
 end
