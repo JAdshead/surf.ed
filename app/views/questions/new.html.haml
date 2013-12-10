@@ -1,0 +1,16 @@
+.header-margin
+  %ul.errors
+  / - @album.errors.full_messages.each do |error|
+  /   %li= error
+
+  %h3 Ask a Question
+
+  = form_for(@question) do |f|
+    = f.label :question
+    = f.text_field :question
+    %br/
+    = f.label :video
+    = f.text_field :video
+    %br
+    .actions
+      = f.submit 'Submit Question'

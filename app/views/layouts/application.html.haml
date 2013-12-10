@@ -11,15 +11,14 @@
         - if user_signed_in?
           Logged in as
           %b= current_user.email
-          = link_to 'Edit Profile', edit_user_registration_path
+          / = link_to 'Edit Profile', edit_user_path
           \|
           = link_to 'Logout',  destroy_user_session_path, method: :delete
         - else
-          = link_to 'Sign up', new_user_registration_path
-          \|
           = link_to 'Login', new_user_session_path
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
-
-      %h1 surf.ed
+      %h1=link_to "surf.ed", root_path
+      = link_to "Questions", questions_path
+      %br
       = yield
