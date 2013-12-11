@@ -1,0 +1,94 @@
+$main-color: #51C5DF; 
+$dark-text-color: rgba(0,0,0,0.58);
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $main-color;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/************
+* UTILITIES *
+************/
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+
+/************
+* SET BASIC SITE *
+************/
+.surf-container {
+
+  p, a, h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    padding: 0px;
+    color: $dark-text-color;
+  }
+}
+
+.site-header {
+  background-color: white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  h1{
+    float:left;
+  }
+}
+
+
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.main, .head, .site-header{
+  padding-left: 10em;
+  padding-right: 10em;
+}
+
+.head {
+  padding-top: 2em;
+}
+
+.head {
+  background-color: $main-color;
+}
+.main{
+  background-color: $main-color;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
+
+.inner-container {
+
+  padding: 2em;
+  background-color: white;
+}
+
+p {
+  color: #fff;
+}
+
+
+/************
+* LOG IN NAV *
+************/
+.user-login {
+  float: right;
+}

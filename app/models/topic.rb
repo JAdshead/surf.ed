@@ -3,7 +3,7 @@ class Topic < ActiveRecord::Base
   belongs_to :user
   has_many :answers, :dependent => :destroy
 
-  attr_accessible :question, :yt_video_id, :is_complete, :added_video
+  attr_accessible :question, :yt_video_id, :is_complete, :added_video, :user_id
 
   scope :completes,   where(:is_complete => true)
   scope :incompletes, where(:is_complete => false)

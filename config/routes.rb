@@ -13,7 +13,12 @@ SurfEd::Application.routes.draw do
     end
   end
   
-  resources :answers
+  resources :answers do
+    member do
+      post :vote_up
+      post :vote_down
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
   root to: 'home#index'

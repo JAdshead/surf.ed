@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require underscore.js
+//= require modernizr.custom.40054.js
+//= require typeahead.min.js
+

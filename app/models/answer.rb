@@ -1,4 +1,5 @@
 class Answer < ActiveRecord::Base
+  acts_as_voteable
   
   attr_accessible :answer, :topic_id
 

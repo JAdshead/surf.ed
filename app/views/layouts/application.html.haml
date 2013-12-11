@@ -4,26 +4,31 @@
     %title SurfEd
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+    %link{href: "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800", rel: "stylesheet", type: "text/css"}/
     = csrf_meta_tags
   %body
-    #container
-      .user-nav
-        - if user_signed_in?
-          Logged in as
-          %b= current_user.email
-          / = link_to 'Edit Profile', edit_user_path
-          \|
-          = link_to 'Logout',  destroy_user_session_path, method: :delete
-        - else
-          = link_to 'Login', new_user_session_path
-
+    .surf-container
+      .site-header.cf
+        %h1=link_to "SURF.ED", root_path
+        .user-login
+          - if user_signed_in?
+            %b= current_user.email
+            / = link_to 'Edit Profile', edit_user_path
+            
+            = link_to 'Logout',  destroy_user_session_path, method: :delete
+          - else
+            = link_to 'Login', new_user_session_path
+      .head 
         = form_tag searches_path do
-          = text_field_tag :query
+          = text_field_tag :query,nil, :class => 'search-input',:placeholder => 'search...'
           = submit_tag "Search"
 
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
-      %h1=link_to "surf.ed", root_path
-      = link_to "Questions", topics_path
-      %br
-      = yield
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
+        = link_to "All Questions", topics_path
+        %br
+      .main
+        .inner-container
+          = yield
+
+

@@ -2,8 +2,17 @@ class TopicsController < ApplicationController
   
   load_and_authorize_resource :except => [:save_video]
 
+
+  def index 
+    respond_to do |format|
+      format.html { render "/topics/index" }
+      format.json { render "/topics/index.json"}
+    end
+  end
+
   def upload
     video = params[:topic][:added_video]
+    binding.pry
     @topic = Topic.new(params[:topic])
     @topic.user = current_user
     @topic.save

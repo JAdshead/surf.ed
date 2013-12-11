@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   has_many :topics, :dependent => :destroy
   has_many :answers, :dependent => :destroy
 
+  acts_as_voter
+  
   before_create do 
     |user| user.role = "user" if user.role.nil?
   end

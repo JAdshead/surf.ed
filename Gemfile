@@ -12,7 +12,8 @@ gem 'haml-rails'
 gem 'cancan'
 gem 'youtube_it'
 gem 'textacular', '~> 3.0'
-gem 'acts_as_votable', '~> 0.8.0'
+gem 'thumbs_up'
+gem 'faker'
 
 
 # Gems used only for assets and not required

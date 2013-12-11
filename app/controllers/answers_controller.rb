@@ -35,6 +35,18 @@ class AnswersController < ApplicationController
     answer.delete
     redirect_to answer.topic
   end
+
+  def vote_up
+    @answer = Answer.find params[:id]
+    current_user.vote_for(@answer)
+    redirect_to @answer.topic
+  end
+
+  def vote_down
+    @answer = Answer.find params[:id]
+    current_user.vote_against(@answer)
+    redirect_to @answer.topic
+  end
   
 end
 

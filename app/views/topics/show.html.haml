@@ -31,11 +31,26 @@
     .comments-form-button
       = f.submit
 
-- @topic.answers.order('created_at DESC').each do |answer|
+- @topic.answers.plusminus_tally.order('plusminus_tally DESC').each do |answer|
+  .votes
+    - if can? :vote_up, :vote_down, answer
+      %br
+      - if current_user.voted_against?(answer)
+        %p You didnt find this helpful
+      - elsif current_user.voted_for?(answer)
+        %p You found this helpful
+      - else 
+        %p Do You find this helpful ?
+        = link_to 'YES', vote_up_answer_path(answer), :method => :post, class: "form-button"
+        = link_to 'NO', vote_down_answer_path(answer), :method => :post, class: "form-button"
   %p 
     Answer Given by 
     = answer.user.name
   = answer.answer
+  - if !!answer.votes
+    %p
+      Score : 
+      = (answer.votes_for - answer.votes_against)
   %br
   - if can? :edit, answer
     = link_to 'Edit Answer', edit_answer_path(answer)
