@@ -1,0 +1,11 @@
+common: &common
+  dev_key: AIzaSyCO-GT_N9zE0Q_nJSg8_hs1sMb6A8amcdg
+  username:  jonny.adshead@gmail.com
+  password:  rstvtt123
+  
+test:
+  <<: *common
+development:
+  <<: *common
+production:
+  <<: *common

@@ -14,11 +14,11 @@ class User < ActiveRecord::Base
   attr_accessible :name, :role, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-  has_many :questions, :dependent => :destroy
+  has_many :topics, :dependent => :destroy
   has_many :answers, :dependent => :destroy
 
   before_create do 
-    |user| user.role = "user"
+    |user| user.role = "user" if user.role.nil?
   end
 
   def has_role?(r)

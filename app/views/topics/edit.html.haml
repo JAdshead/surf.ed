@@ -1,0 +1,5 @@
+%h2 Edit question
+
+= form_for @topic, :url => topic_path(@topic) do |f|
+  = f.text_field :question, placeholder: "Whats your question ?"
+  = f.submit "Save"

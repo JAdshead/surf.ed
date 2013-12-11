@@ -1,0 +1,11 @@
+.header-margin
+  %ul.errors
+  / - @album.errors.full_messages.each do |error|
+  /   %li= error
+
+  %h3 Ask a Question
+
+  = form_for @topic, :url => upload_new_topic_path do |f|
+    = f.text_field :question, placeholder: "Whats your question ?"
+    .actions
+      = f.submit 'Add video'

@@ -19,6 +19,6 @@
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
       %h1=link_to "surf.ed", root_path
-      = link_to "Questions", questions_path
+      = link_to "Questions", topics_path
       %br
       = yield

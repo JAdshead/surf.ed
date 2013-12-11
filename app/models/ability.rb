@@ -3,10 +3,8 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-
     if user.has_role? :admin
       can :manage, :all
-
     elsif user.has_role? :user
       can :read, :all
 
@@ -14,9 +12,9 @@ class Ability
           user_object == user
       end
 
-      can :create, Question
-      can :edit, Question do |user|
-        question.user == user
+      can :upload, Topic
+      can :edit, Topic do |user|
+        topic.user == user
       end
     else
       can :read, :all

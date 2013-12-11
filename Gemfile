@@ -11,6 +11,7 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'haml-rails'
 gem 'cancan'
+gem 'youtube_it'
 
 # Gems used only for assets and not required
 # in production environments by default.

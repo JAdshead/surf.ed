@@ -6,7 +6,13 @@ SurfEd::Application.routes.draw do
   resources :invite, except: [:destroy, :edit, :update, :show]
   
 
-  resources :questions
+  resources :topics do 
+    new do
+      post :upload
+      get  :save_video
+    end
+  end
+  
   resources :answers
   # The priority is based upon order of creation:
   # first created -> highest priority.
