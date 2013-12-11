@@ -26,17 +26,16 @@ class AnswersController < ApplicationController
   end
 
   def update
-    answer.update_attributes params[:answer]
-    redirect_to answer
+    @answer.update_attributes params[:answer]
+    redirect_to @answer.topic
   end
 
   def destroy
-    answer = answer.find params[:id]
+    answer = Answer.find params[:id]
     answer.delete
     redirect_to answer.topic
   end
-
-
+  
 end
 
 

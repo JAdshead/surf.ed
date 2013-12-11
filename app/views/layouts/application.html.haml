@@ -16,6 +16,11 @@
           = link_to 'Logout',  destroy_user_session_path, method: :delete
         - else
           = link_to 'Login', new_user_session_path
+
+        = form_tag searches_path do
+          = text_field_tag :query
+          = submit_tag "Search"
+
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
       %h1=link_to "surf.ed", root_path

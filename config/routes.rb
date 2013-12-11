@@ -18,4 +18,6 @@ SurfEd::Application.routes.draw do
   # first created -> highest priority.
   root to: 'home#index'
 
+  resources :searches, only: [:create]
+
 end

@@ -17,3 +17,33 @@
 %p 
   Email :
   = @topic.user.email
+
+
+- if can? :create, @answer
+  %h3 Form to Add a Answer
+  / %ul.errors
+  /   - @answer.errors.full_messages.each do |error|
+  /     %li= error
+  = form_for(@answer) do |f|
+    = hidden_field_tag :topic_id, @topic.id
+    = f.text_field :answer, placeholder: "Answer Question"
+    %br/
+    .comments-form-button
+      = f.submit
+
+- @topic.answers.order('created_at DESC').each do |answer|
+  %p 
+    Answer Given by 
+    = answer.user.name
+  = answer.answer
+  %br
+  - if can? :edit, answer
+    = link_to 'Edit Answer', edit_answer_path(answer)
+  - if can? :destroy, answer
+    = link_to 'Delete Answer', answer, method: :delete
+  %hr
+
+
+
+
+

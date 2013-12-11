@@ -36,6 +36,10 @@ class TopicsController < ApplicationController
     redirect_to topics_path, :notice => "video successfully uploaded"
   end
 
+  def show
+    @answer = Answer.new
+  end
+
   def edit
   end
   
