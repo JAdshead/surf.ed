@@ -3,18 +3,26 @@ class TopicsController < ApplicationController
   load_and_authorize_resource :except => [:save_video]
 
   def upload
+    video = params[:topic][:added_video]
     @topic = Topic.new(params[:topic])
     @topic.user = current_user
     @topic.save
-    if @topic.save
-       @upload_info = Topic.token_form(params[:topic], save_video_new_topic_url(:topic_id => @topic.id))
-    else
-      respond_to do |format|
-        format.html { render "/topics/new" }
-      end
-    end
-  end
+    if video == "1"
 
+      if @topic.save
+         @upload_info = Topic.token_form(params[:topic], save_video_new_topic_url(:topic_id => @topic.id))
+      else
+        respond_to do |format|
+          format.html { render "/topics/new" }
+        end
+      end
+    else 
+      @topic.update_attributes(:is_complete => true)
+      @topic.save
+      redirect_to topics_path, :notice => "Question has been"
+    end
+
+  end
 
   def save_video
     @topic = Topic.find(params[:topic_id])
@@ -45,6 +53,16 @@ class TopicsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @topic = Topic.find(params[:id])
+    if Topic.delete_video(@topic)
+      flash[:notice] = "Question successfully deleted"
+    else
+      flash[:error] = "Question unsuccessfully deleted"
+    end
+    redirect_to topics_path
   end
 
 end

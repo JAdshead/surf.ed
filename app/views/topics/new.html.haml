@@ -7,5 +7,7 @@
 
   = form_for @topic, :url => upload_new_topic_path do |f|
     = f.text_field :question, placeholder: "Whats your question ?"
+    = f.check_box :added_video
+    = f.label :added_video, "Add Video"
     .actions
-      = f.submit 'Add video'
+      = f.submit 'Submit / or add Video'

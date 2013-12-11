@@ -3,7 +3,7 @@ class Topic < ActiveRecord::Base
   belongs_to :user
   has_many :answers, :dependent => :destroy
 
-  attr_accessible :question, :yt_video_id, :is_complete
+  attr_accessible :question, :yt_video_id, :is_complete, :added_video
 
   scope :completes,   where(:is_complete => true)
   scope :incompletes, where(:is_complete => false)
@@ -19,9 +19,14 @@ class Topic < ActiveRecord::Base
         video.destroy
   end
 
-  def self.update_video(video, params)
-    yt_session.video_update(video.yt_video_id, video_options(params))
-    video.update_attributes(params)
+  def self.update_video(topic, params)
+    if topic.added_video
+      binding.pry
+      yt_session.video_update(topic.yt_video_id, video_options(params))
+      topic.update_attributes(params)
+    else
+      topic.update_attributes(params)
+    end
   end
 
   def self.token_form(params, nexturl)

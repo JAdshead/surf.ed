@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.delete_all
+Topic.delete_all
 
 user=User.new(:email=>'admin@admin.com',:name=>'admin',:password=>'password', :role=>'admin')
 user.skip_confirmation!
