@@ -2,7 +2,6 @@ class TopicsController < ApplicationController
   
   load_and_authorize_resource :except => [:save_video]
 
-
   def index 
     @topics_suggest = Topic.fuzzy_search params[:query]
     respond_to do |format|

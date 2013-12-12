@@ -1,12 +1,15 @@
+:javascript
+  var topic = JSON.parse('#{@topic.to_json}');
+
+
 %h3= @topic.question
 
 - if @topic.yt_video_id
   - if (yt_client.my_video(@topic.yt_video_id) rescue nil )
-    = raw yt_client.my_video(@topic.yt_video_id).embed_html_with_width(500)
+    #player
   - else
     Video no longer exists
-
-
+%br
 = link_to "Edit", edit_topic_path(@topic)
 |
 = link_to "Delete", topic_path(@topic), :method => "delete"

@@ -1,7 +1,7 @@
 %h3 Questions
 
 %ul
-  - @topics.each do |topic|
+  - @topics.order("created_at DESC").each do |topic|
     %li
       =link_to topic.question, topic
       / %p By #{topic.user.name} 
