@@ -21,7 +21,6 @@ class Topic < ActiveRecord::Base
 
   def self.update_video(topic, params)
     if topic.added_video
-      binding.pry
       yt_session.video_update(topic.yt_video_id, video_options(params))
       topic.update_attributes(params)
     else

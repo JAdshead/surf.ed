@@ -2,6 +2,8 @@
 $ ->
   $('input.search-input').typeahead({                                
     name: 'topics',                                                          
-    prefetch: ["topics"]                                       
-    limit: 5                                                                   
+    # local: ["how can i", "when should i"],  
+    remote: "/topics.json?query=%QUERY",
+    limit: 5,
+    minLength: 3                                                                 
   })

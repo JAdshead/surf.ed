@@ -6,6 +6,7 @@ SurfEd::Application.routes.draw do
   resources :invite, except: [:destroy, :edit, :update, :show]
   
 
+
   resources :topics do 
     new do
       post :upload

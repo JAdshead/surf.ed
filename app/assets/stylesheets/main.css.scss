@@ -92,3 +92,34 @@ p {
 .user-login {
   float: right;
 }
+
+/************
+* INPUT BOXS *
+************/
+
+input {
+  border: none;
+  background-color: white;
+  color: $dark-text-color;
+  letter-spacing: 0.1em;
+  padding: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.5em;
+  background-color: white;
+  display: inline-block;
+  border-radius: 0;
+  border: none;
+}
+.twitter-typeahead {
+  display: inline-block;
+  width: 50%;
+}
+
+
+

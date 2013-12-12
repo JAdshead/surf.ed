@@ -1,16 +1,12 @@
 $main-color: #51C5DF;
 $main-color-a: rgba(83,198,223,0.9); 
 
-
-
-
-.tt-query {
-  color: $main-color;
-  background-color: $main-color;
-}
+// .tt-query {
+//   color: $main-color;
+//   background-color: $main-color;
+// }
 
 .tt-hint {
-  color: $main-color;
   background-color: $main-color;
 }
 
@@ -20,7 +16,6 @@ $main-color-a: rgba(83,198,223,0.9);
 
 .tt-suggestion {
   background-color: rgba(250,250,250,0.95);
-
   padding: 1em;
   color: $main-color;
 }
@@ -31,3 +26,5 @@ $main-color-a: rgba(83,198,223,0.9);
   font-size: 1.1em;
   border: 2px solid white
 }
+
+

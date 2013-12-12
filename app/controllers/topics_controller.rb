@@ -4,15 +4,17 @@ class TopicsController < ApplicationController
 
 
   def index 
+    @topics_suggest = Topic.fuzzy_search params[:query]
     respond_to do |format|
-      format.html { render "/topics/index" }
-      format.json { render "/topics/index.json"}
+      format.html # index.html.erb
+      format.json { render json: @topics_suggest.pluck(:question) }
     end
   end
 
+
   def upload
     video = params[:topic][:added_video]
-    binding.pry
+
     @topic = Topic.new(params[:topic])
     @topic.user = current_user
     @topic.save

@@ -12,6 +12,7 @@
  *= require_tree .
  *= require bootstrap
  *= require animate
- *= require main
  *= require search-box
+ *= require main
+
  */

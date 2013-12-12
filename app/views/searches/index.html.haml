@@ -1,8 +1,7 @@
 %h2 Search results
 
-- @topics.each do |topic|
-  %li
-    = topic.question
-    %p 
-      By
-      = topic.user.name
+%ul
+  - @topics.each do |topic|
+    %li
+      =link_to topic.question, topic
+      / %p By #{topic.user.name} 

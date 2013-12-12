@@ -6,4 +6,5 @@ class SearchesController < ApplicationController
     render :index
   end
 
+
 end
