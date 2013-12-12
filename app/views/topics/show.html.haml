@@ -5,10 +5,7 @@
 %h3= @topic.question
 
 - if @topic.yt_video_id
-  - if (yt_client.my_video(@topic.yt_video_id) rescue nil )
-    #player
-  - else
-    Video no longer exists
+  #player
 %br
 = link_to "Edit", edit_topic_path(@topic)
 |

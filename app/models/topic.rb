@@ -9,7 +9,7 @@ class Topic < ActiveRecord::Base
   scope :incompletes, where(:is_complete => false)
 
   def self.yt_session
-    @yt_session ||= YouTubeIt::Client.new(:username => YouTubeITConfig.username , :password => YouTubeITConfig.password , :dev_key => YouTubeITConfig.dev_key)    
+    @yt_session ||= YouTubeIt::Client.new(:username => ENV["YOUTUBE_IT_USERNAME"] , :password => ENV["YOUTUBE_IT_PASSWORD"] , :dev_key => ENV["YOUTUBE_IT_DEV_KEY"])    
   end
 
   def self.delete_video(video)

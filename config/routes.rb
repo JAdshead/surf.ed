@@ -1,11 +1,13 @@
 SurfEd::Application.routes.draw do
   devise_for :users
 
-  # resources :users, only: [:edit, :update]
 
+  devise_scope :user do
+    #get 'users' => 'users#index'
+    resources :users, only: [:index, :edit ,:update, :show]
+  end
   resources :invite, except: [:destroy, :edit, :update, :show]
   
-
 
   resources :topics do 
     new do

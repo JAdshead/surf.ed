@@ -12,7 +12,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     width: widthCheck(),
     height: (widthCheck())*0.65,
-    videoId: "QlxnPis06i4",
+    videoId: topic.yt_video_id,
   });
 }
 

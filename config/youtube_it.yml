@@ -1,11 +1,11 @@
-common: &common
-  dev_key: ENV["YOUTUBE_IT_DEV_KEY"]
-  username:  ENV["YOUTUBE_IT_USERNAME"]
-  password:  ENV["YOUTUBE_IT_PASSWORD"]
+# common: &common
+#   dev_key: ENV["YOUTUBE_IT_DEV_KEY"]
+#   username:  ENV["YOUTUBE_IT_USERNAME"]
+#   password:  ENV["YOUTUBE_IT_PASSWORD"]
 
-test:
-  <<: *common
-development:
-  <<: *common
-production:
-  <<: *common
+# test:
+#   <<: *common
+# development:
+#   <<: *common
+# production:
+#   <<: *common

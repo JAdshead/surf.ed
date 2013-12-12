@@ -1,0 +1,5 @@
+%h2= @user.name
+
+%ul
+  - @user.topics.each do |topic|
+    %li= topic.question 
