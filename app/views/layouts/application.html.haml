@@ -14,7 +14,9 @@
         %h1=link_to "SURF.ED", root_path
         .user-login
           - if user_signed_in?
-            %b= link_to current_user.email, user_path(current_user)
+            = link_to current_user do
+              .avatar-main= image_tag avatar_url(current_user)
+
             \|           
             = link_to 'Edit Profile', edit_user_registration_path
             \|
@@ -32,7 +34,7 @@
         %span.close x
         = form_tag searches_path do
           .input-box
-            = text_field_tag :query, nil, :class => 'search-input input-box', :placeholder => 'search...', :autocomplete =>"off", autofocus: :autofocus 
+            = text_field_tag :query, nil, :class => 'search-input input-box', :placeholder => 'search...', :autocomplete =>"off", :autofocus => true
             .hide-me
               = submit_tag "submit"
       .head.side-bar-nav      

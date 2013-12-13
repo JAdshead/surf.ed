@@ -6,6 +6,9 @@
 
   <%= f.text_field :name, :autofocus => true, placeholder: "Name" %></div>
 
+  <div><%= f.label :avatar %><br />
+  <%= f.file_field :avatar %></div>
+
   <p><%= f.label :password %><br />
   <%= f.password_field :password %></p>
 
