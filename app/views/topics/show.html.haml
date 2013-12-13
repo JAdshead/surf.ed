@@ -4,6 +4,14 @@
 
 %h3= @topic.question
 
+- if can? :vote_up, @topic
+  - if current_user.voted_for?(@topic)
+    %p STARED
+  -else
+    = link_to 'Star', vote_up_topic_path(@topic), :method => :post, class: "form-button"
+
+%br 
+
 - if @topic.yt_video_id
   #player
   

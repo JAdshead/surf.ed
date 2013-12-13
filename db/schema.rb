@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131211161436) do
+ActiveRecord::Schema.define(:version => 20131213104739) do
 
   create_table "answers", :force => true do |t|
     t.integer  "user_id"
@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(:version => 20131211161436) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.boolean  "added_video"
+  end
+
+  create_table "topics_users", :id => false, :force => true do |t|
+    t.integer "topic_id"
+    t.integer "user_id"
   end
 
   create_table "users", :force => true do |t|

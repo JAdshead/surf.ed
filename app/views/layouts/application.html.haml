@@ -5,6 +5,8 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     %link{href: "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800", rel: "stylesheet", type: "text/css"}/
+    %script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+
     = csrf_meta_tags
   %body
     .surf-container
@@ -13,26 +15,34 @@
         .user-login
           - if user_signed_in?
             %b= link_to current_user.email, user_path(current_user)
-           
+            \|           
             = link_to 'Edit Profile', edit_user_registration_path
             \|
             = link_to 'Logout',  destroy_user_session_path, method: :delete
           - else
             = link_to 'Login', new_user_session_path
-            
-      .head.side-bar-nav 
+        \|
+        = link_to "All Questions", topics_path
+        \|
+        = link_to 'ASK', new_topic_path
+        \|
+  
+        %a.search  Search
+      .overlay
+        %span.close x
         = form_tag searches_path do
           .input-box
-            = text_field_tag :query,nil, :class => 'search-input input-box',:placeholder => 'search...'
-          = submit_tag "SEARCH"
-
+            = text_field_tag :query, nil, :class => 'search-input input-box', :placeholder => 'search...', :autocomplete =>"off", autofocus: :autofocus 
+            .hide-me
+              = submit_tag "submit"
+      .head.side-bar-nav      
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
-        = link_to "All Questions", topics_path
-
+        
       .main
         .inner-container
           = yield
+
 
 
 

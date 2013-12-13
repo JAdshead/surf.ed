@@ -18,7 +18,10 @@ class User < ActiveRecord::Base
   has_many :topics, :dependent => :destroy
   has_many :answers, :dependent => :destroy
 
+  has_and_belongs_to_many :starred, :class_name => "Topic"
+
   acts_as_voter
+  has_karma :answers, :as => :submitter, :weight => 0.5
   
   before_create do 
     |user| user.role = "user" if user.role.nil?
