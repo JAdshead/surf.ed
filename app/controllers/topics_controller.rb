@@ -14,7 +14,6 @@ class TopicsController < ApplicationController
     video = params[:topic][:added_video]
     @topic = Topic.new(params[:topic])
     @topic.user = current_user
-    User.update_score(current_user)
     @topic.save
     if video == "1"
       if @topic.save
@@ -27,7 +26,7 @@ class TopicsController < ApplicationController
     else 
       @topic.update_attributes(:is_complete => true)
       @topic.save
-      redirect_to topics_path, :notice => "Question has been"
+      redirect_to @topic, :notice => "Question has been"
     end
 
   end
@@ -41,7 +40,7 @@ class TopicsController < ApplicationController
     else
       Topic.delete_video(@topic)
     end
-    redirect_to topics_path, :notice => "video successfully uploaded"
+    redirect_to @topic, :notice => "video successfully uploaded"
   end
 
   def show
@@ -53,7 +52,6 @@ class TopicsController < ApplicationController
   
   def update
     @topic     = Topic.find(params[:id])
-    User.update_score(current_user)
     @result    = Topic.update_video(@topic, params[:topic])
     respond_to do |format|
       format.html do
@@ -83,11 +81,11 @@ class TopicsController < ApplicationController
 
     @topic = Topic.find params[:id]
     current_user.vote_for(@topic)
-
     @topic.score += 1
     @topic.fans << current_user
 
-    User.update_score(current_user)
+    User.invitaion_update(@topic.user)
+    User.update_score(@topic.user)
 
     @topic.save
 

@@ -1,13 +1,13 @@
 
 .menu
   .q.unaswered-q-tab
-    %p Unaswered questions
+    %p Unaswered Questions
 
   .q.top-q-tab
-    %p Top questions
+    %p Top Questions
 
   .q.top-users-tab
-    %p users
+    %p Top Users
 
 
 .top-questions-content
@@ -24,8 +24,9 @@
   %ul
     - @users.each do |user|
       %li
-        =link_to user.name, user
-        = user.score
+        - if user.name
+          =link_to user.name, user
+          = user.score
 
 .unaswered-questions-content 
   %h3 unansered questions

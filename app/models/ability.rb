@@ -18,6 +18,7 @@ class Ability
           user_object == user
       end
 
+      can :create, Topic
       can :upload, Topic
       can :edit, Topic do |user|
         user == topic.user

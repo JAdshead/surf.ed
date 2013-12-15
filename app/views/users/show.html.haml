@@ -3,10 +3,21 @@
 .avatar-main
   = image_tag avatar_url(@user)
 
-= link_to 'INVITE', new_user_invitation_path
+- if @user.invitation_limit == 0
+  %p You must earn invitations
+- else
+  %p Invitations left  #{@user.invitation_limit}
+  = link_to 'INVITE', new_user_invitation_path
 
 %p User has posted #{@user.topics.count} questions 
 
 %p User has answered #{@user.answers.count} questions
 
 %p User has STARED #{@user.starred.count} questions
+
+%P Users Score is #{@user.score}
+
+- if @user.invited_by_id
+  %p 
+    User was invited by 
+    =link_to User.find(@user.invited_by_id).name, User.find(@user.invited_by_id)

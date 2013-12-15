@@ -52,7 +52,12 @@ class AnswersController < ApplicationController
 
   def vote_up
     @answer = Answer.find params[:id]
-    User.update_score(current_user)
+    User.update_score(@answer.user)
+
+    # testin this
+    User.invitaion_update(@answer.user)
+    @answer.user.save
+
     current_user.vote_for(@answer)
     redirect_to @answer.topic
   end
