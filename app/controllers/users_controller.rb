@@ -14,6 +14,7 @@ class UsersController < Devise::RegistrationsController
 
   def update
     @user = current_user
+    User.update_score(current_user)
   end
 
 end

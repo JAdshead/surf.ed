@@ -34,4 +34,9 @@ class User < ActiveRecord::Base
     self.role == r.to_s
   end
 
+  def self.update_score(user)
+    user.score = (user.topics.map{ |topic| topic.score}.sum + user.answers.map{ |a| a.plusminus}.sum)
+    user.save
+  end
+
 end

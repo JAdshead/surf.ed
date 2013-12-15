@@ -14,6 +14,7 @@ class TopicsController < ApplicationController
     video = params[:topic][:added_video]
     @topic = Topic.new(params[:topic])
     @topic.user = current_user
+    User.update_score(current_user)
     @topic.save
     if video == "1"
       if @topic.save
@@ -52,6 +53,7 @@ class TopicsController < ApplicationController
   
   def update
     @topic     = Topic.find(params[:id])
+    User.update_score(current_user)
     @result    = Topic.update_video(@topic, params[:topic])
     respond_to do |format|
       format.html do
@@ -68,6 +70,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic = Topic.find(params[:id])
+    User.update_score(current_user)
     if Topic.delete_video(@topic)
       flash[:notice] = "Question successfully deleted"
     else
@@ -83,8 +86,11 @@ class TopicsController < ApplicationController
 
     @topic.score += 1
     @topic.fans << current_user
+
+    User.update_score(current_user)
+
     @topic.save
-    
+
     redirect_to @topic
 
   end
