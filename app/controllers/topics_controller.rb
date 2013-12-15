@@ -79,4 +79,13 @@ class TopicsController < ApplicationController
     redirect_to topics_path
   end
 
+  def vote_up
+    @topic = Topic.find params[:id]
+    current_user.vote_for(@topic)
+
+    @topic.fans << current_user
+    
+    redirect_to @topic
+  end
+
 end

@@ -1,4 +1,4 @@
-class Answer < ActiveRecord::Migration
+class Answers < ActiveRecord::Migration
   def change
     create_table :answers do |t|
       t.belongs_to :user

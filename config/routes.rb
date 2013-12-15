@@ -14,6 +14,9 @@ SurfEd::Application.routes.draw do
       post :upload
       get  :save_video
     end
+    member do
+      post :vote_up
+    end
   end
   
   resources :answers do

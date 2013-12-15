@@ -1,11 +1,6 @@
 $main-color: #51C5DF;
 $main-color-a: rgba(83,198,223,0.9); 
 
-// .tt-query {
-//   color: $main-color;
-//   background-color: $main-color;
-// }
-
 .tt-hint {
   background-color: $main-color;
 }
@@ -27,4 +22,65 @@ $main-color-a: rgba(83,198,223,0.9);
   border: 2px solid white
 }
 
+#overlay {
+    position: fixed;
+    top: 0; bottom: 0;
+    right: 0; left: 0;
+    display: none;
+    background: $main-color-a;
+}
+
+#overlay input {
+    padding: 20px;
+    font-size: 16px;
+    border: 0;
+    margin: 40px;
+}
+
+#overlay input:focus { outline: none; }
+
+#overlay #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-weight: bold;
+}
+
+
+// /////////////////////////////
+.search {
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  color: $main-color;
+}
+
+.overlay {
+  // position: fixed;
+  top: 4em; bottom: 0;
+  right: 0; left: 0;
+  display: none;
+  background:$main-color-a;
+  height: 100%
+}
+
+.overlay .close {
+  cursor: pointer;
+  position: relative;
+  font-weight: 500;
+  font-size: 5em;
+  // top: 1em;
+  // right: 0.7em;
+  z-index: 10;
+}
+
+.input-box {
+  background-color: white;
+}
 

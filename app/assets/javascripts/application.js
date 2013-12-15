@@ -16,4 +16,5 @@
 //= require underscore.js
 //= require modernizr.custom.40054.js
 //= require typeahead.min.js
+//= require main.js.coffee
 

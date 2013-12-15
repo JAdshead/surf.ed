@@ -13,8 +13,16 @@ class AnswersController < ApplicationController
 
   def create
     @answer.topic_id = params[:topic_id]
+    
+    # set answered state of topic to true if first answer
+    if @answer.topic.answers.count == 0
+      @answer.topic.answered = true
+      @answer.topic.save
+    end
+
     @answer.user_id = current_user.id
     if @answer.save
+
       redirect_to @answer.topic
     else
       @topic = Topic.find params[:topic_id]
@@ -32,6 +40,12 @@ class AnswersController < ApplicationController
 
   def destroy
     answer = Answer.find params[:id]
+
+    if answer.topic.answers.count <=1
+      answer.topic.answered = false
+      answer.topic.save
+    end
+    
     answer.delete
     redirect_to answer.topic
   end

@@ -1,8 +1,12 @@
 class Topic < ActiveRecord::Base
   
+  acts_as_voteable
+  
   belongs_to :user
   has_many :answers, :dependent => :destroy
 
+  has_and_belongs_to_many :fans, :class_name => "User"
+  
   attr_accessible :question, :yt_video_id, :is_complete, :added_video, :user_id
 
   scope :completes,   where(:is_complete => true)
