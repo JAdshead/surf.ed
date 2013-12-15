@@ -1,9 +1,34 @@
 
-%p Unaswered questions
-= @topics.count
+.menu
+  .q.unaswered-q-tab
+    %p Unaswered questions
 
-%p Top questions
-= @topics.count
+  .q.top-q-tab
+    %p Top questions
 
-%p users 
-= @users.count
+  .q.top-users-tab
+    %p users
+
+
+.top-questions-content
+  %h3 topics all
+  %ul
+    - @topics.each do |topic|
+      %li
+        =link_to topic.question, topic
+        Stars:
+        = topic.votes_for
+
+.top-users-content
+  %h3 users all 
+  %ul
+    - @users.each do |user|
+      %li
+        =link_to user.name, user
+
+.unaswered-questions-content 
+  %h3 unansered questions
+  %ul
+    - @unanswered.each do |topic|
+      %li
+        =link_to topic.question, topic

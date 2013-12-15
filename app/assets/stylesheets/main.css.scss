@@ -125,4 +125,19 @@ input {
   width: 100%;
 }
 
+/************
+* Main menu page - home#index *
+************/
+
+.menu .q {
+  display: inline-block;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.menu .active{
+  font-weight: 600;
+}
+
+
 

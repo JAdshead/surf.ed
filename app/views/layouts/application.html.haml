@@ -5,7 +5,7 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     %link{href: "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800", rel: "stylesheet", type: "text/css"}/
-    %script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+    %script type="text/javascript" src="jquery-2.0.3.js"
 
     = csrf_meta_tags
   %body
@@ -23,13 +23,11 @@
             = link_to 'Logout',  destroy_user_session_path, method: :delete
           - else
             = link_to 'Login', new_user_session_path
-        \|
-        = link_to "All Questions", topics_path
-        \|
-        = link_to 'ASK', new_topic_path
-        \|
-  
-        %a.search  Search
+          \|
+          = link_to 'ASK', new_topic_path
+          \|
+    
+          %a.search  Search
       .overlay
         %span.close x
         = form_tag searches_path do
