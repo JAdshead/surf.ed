@@ -6,16 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.delete_all
+# User.delete_all
 Topic.delete_all
 
-user=User.new(:email=>'admin@admin.com',:name=>'admin',:password=>'password', :role=>'admin')
-user.skip_confirmation!
-user.save!
+# user=User.new(:email=>'admin@admin.com',:name=>'admin',:password=>'password', :role=>'admin')
+# user.skip_confirmation!
+# user.save!
 
-user2=User.new(:email=>'bob@user.com',:name=>'Bob Bobby',:password=>'password', :role=>'user')
-user.skip_confirmation!
-user.save!
+# user2=User.new(:email=>'bob@user.com',:name=>'Bob Bobby',:password=>'password', :role=>'user')
+# user.skip_confirmation!
+# user.save!
 
 
 

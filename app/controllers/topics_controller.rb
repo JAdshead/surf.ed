@@ -10,15 +10,12 @@ class TopicsController < ApplicationController
     end
   end
 
-
   def upload
     video = params[:topic][:added_video]
-
     @topic = Topic.new(params[:topic])
     @topic.user = current_user
     @topic.save
     if video == "1"
-
       if @topic.save
          @upload_info = Topic.token_form(params[:topic], save_video_new_topic_url(:topic_id => @topic.id))
       else
@@ -80,12 +77,16 @@ class TopicsController < ApplicationController
   end
 
   def vote_up
+
     @topic = Topic.find params[:id]
     current_user.vote_for(@topic)
 
+    @topic.score += 1
     @topic.fans << current_user
+    @topic.save
     
     redirect_to @topic
+
   end
 
 end

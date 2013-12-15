@@ -40,6 +40,10 @@ class Topic < ActiveRecord::Base
     self.incompletes.map{|r| r.destroy}
   end
 
+  # def self.score(topic)
+  #   topic.plusminus_tally
+  # end
+
   private
     def self.video_options(params)
       opts = {:title => params[:question],

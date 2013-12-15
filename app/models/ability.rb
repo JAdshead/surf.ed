@@ -9,6 +9,7 @@ class Ability
       can :vote_down, :all
 
     elsif user.has_role? :user
+
       can :read, :all
       can :vote_up, :all
       can :vote_down, :all
@@ -19,7 +20,12 @@ class Ability
 
       can :upload, Topic
       can :edit, Topic do |user|
-        topic.user == user
+        user == topic.user
+      end
+
+      can :create, Answer
+      can :manage, Answer do |answer|
+        answer.user == user
       end
     else
       can :read, :all
