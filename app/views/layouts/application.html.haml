@@ -13,18 +13,31 @@
       .site-header.cf
         %h1=link_to "SURF.ED", root_path
         .user-login
-          = link_to 'ASK QUESTION', new_topic_path
-          \|
-          %a.search  SEARCH
-          \|
-          - if user_signed_in?
-            = link_to current_user do
-              .avatar-main= image_tag avatar_url(current_user)         
-            = link_to 'EDIT Profile', edit_user_registration_path
-            \|
-            = link_to 'LOGOUT',  destroy_user_session_path, method: :delete
+          / ask question
+          .icon
+            = link_to "ASK QUESTION", new_topic_path
+          
+          .icon    
+            %a.search SEARCH
+
+          - if user_signed_in?   
+            / edit
+      
+            
+                
+            / logout
+         
+            .icon
+              = link_to destroy_user_session_path, method: :delete do
+                LOG OUT
+
+            .avatar-main.icon
+              = link_to current_user do
+                = image_tag avatar_url(current_user)      
+
           - else
-            = link_to 'LOGIN', new_user_session_path
+            .icon
+              = link_to 'LOGIN', new_user_session_path
           
           
     

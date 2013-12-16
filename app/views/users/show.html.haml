@@ -3,6 +3,8 @@
 .avatar-main
   = image_tag avatar_url(@user)
 
+= link_to "EDIT PROFILE", edit_user_registration_path
+
 - if @user.invitation_limit == 0
   %p You must earn invitations
 - else
@@ -16,6 +18,9 @@
 %p User has STARED #{@user.starred.count} questions
 
 %P Users Score is #{@user.score}
+
+
+
 
 - if @user.invited_by_id
   %p 

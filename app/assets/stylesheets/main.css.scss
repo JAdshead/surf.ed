@@ -91,6 +91,32 @@ p {
 ************/
 .user-login {
   float: right;
+  font-size: 1.1em;
+}
+
+.icon-img {
+  width: 2em;
+  height: 2em;
+}
+
+.avatar-main{
+  display: inline;
+}
+
+.avatar-main img{
+  width: 2.5em;
+
+}
+
+.icon {
+  display: inline; 
+  padding-left: 1em;
+  
+  
+}
+
+.icon {
+
 }
 
 /************
@@ -124,6 +150,10 @@ input {
   display: inline-block;
   width: 100%;
 }
+
+
+
+
 
 /************
 * Main menu page - home#index *
