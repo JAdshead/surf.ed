@@ -22,30 +22,6 @@ $main-color-a: rgba(83,198,223,0.9);
   border: 2px solid white
 }
 
-#overlay {
-    position: fixed;
-    top: 0; bottom: 0;
-    right: 0; left: 0;
-    display: none;
-    background: $main-color-a;
-}
-
-#overlay input {
-    padding: 20px;
-    font-size: 16px;
-    border: 0;
-    margin: 40px;
-}
-
-#overlay input:focus { outline: none; }
-
-#overlay #close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-weight: bold;
-}
-
 
 // /////////////////////////////
 .search {
@@ -53,34 +29,63 @@ $main-color-a: rgba(83,198,223,0.9);
 }
 
 .close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2em;
+  font-size: 5em;
   cursor: pointer;
+  // color: $main-color;
+}
+
+.close:hover{
   color: $main-color;
+  font-weight: 800;
 }
 
 .overlay {
-  // position: fixed;
-  top: 4em; bottom: 0;
+  position: fixed;
+  top: 0  ; bottom: 0;
   right: 0; left: 0;
   display: none;
-  background:$main-color-a;
+  background:$main-color;
   height: 100%
 }
 
+.overlay h1 {
+  background-color: white;
+  font-size: 4em;
+  padding-left: 1em;
+  padding-top: 0.5em;
+}
+
+.overlay form input{
+  padding-top: 3em;
+  padding-left: 3em;
+}
+
+.overlay {
+  padding-bottom: 1em;
+}
+
 .overlay .close {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
   cursor: pointer;
-  position: relative;
   font-weight: 500;
   font-size: 5em;
-  // top: 1em;
-  // right: 0.7em;
-  z-index: 10;
+  z-index: 40;
 }
 
 .input-box {
   background-color: white;
+  padding-top: 1em;
+}
+
+.hide-me {
+  float: left;
+}
+.hide-me input {
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+  background: none;
 }
 

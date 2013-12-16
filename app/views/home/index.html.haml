@@ -1,36 +1,21 @@
-
 .menu
-  .q.unaswered-q-tab
-    %p Unaswered Questions
+  .q.top-q-tab.active
+    %h3 Top Questions
 
-  .q.top-q-tab
-    %p Top Questions
+  .q.unanswered-q-tab
+    %h3 Unanswered Questions
 
   .q.top-users-tab
-    %p Top Users
-
+    %h3 Top Users
 
 .top-questions-content
-  %h3 topics all
-  %ul
-    - @topics.each do |topic|
-      %li
-        =link_to topic.question, topic
-        Stars:
-        = topic.votes_for
+  #questions
+    = render 'top_questions'
 
 .top-users-content
-  %h3 users all 
-  %ul
-    - @users.each do |user|
-      %li
-        - if user.name
-          =link_to user.name, user
-          = user.score
+  #top_users
+    = render 'top_users'
 
-.unaswered-questions-content 
-  %h3 unansered questions
-  %ul
-    - @unanswered.each do |topic|
-      %li
-        =link_to topic.question, topic
+.unanswered-questions-content
+  #unanswered
+    = render 'unanswered_questions'

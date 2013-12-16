@@ -13,28 +13,30 @@
       .site-header.cf
         %h1=link_to "SURF.ED", root_path
         .user-login
+          = link_to 'ASK QUESTION', new_topic_path
+          \|
+          %a.search  SEARCH
+          \|
           - if user_signed_in?
             = link_to current_user do
-              .avatar-main= image_tag avatar_url(current_user)
-
-            \|           
-            = link_to 'Edit Profile', edit_user_registration_path
+              .avatar-main= image_tag avatar_url(current_user)         
+            = link_to 'EDIT Profile', edit_user_registration_path
             \|
-            = link_to 'Logout',  destroy_user_session_path, method: :delete
+            = link_to 'LOGOUT',  destroy_user_session_path, method: :delete
           - else
-            = link_to 'Login', new_user_session_path
-          \|
-          = link_to 'ASK', new_topic_path
-          \|
+            = link_to 'LOGIN', new_user_session_path
+          
+          
     
-          %a.search  Search
+          
       .overlay
-        %span.close x
+        %span.close.cf x
+        %h1.cf SURF.ED
+        %h1.cf SEARCH
         = form_tag searches_path do
-          .input-box
+          .input-box.col-md-6
             = text_field_tag :query, nil, :class => 'search-input input-box', :placeholder => 'search...', :autocomplete =>"off", :autofocus => true
-            .hide-me
-              = submit_tag "submit"
+            .hide-me= submit_tag "submit"
       .head.side-bar-nav      
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
