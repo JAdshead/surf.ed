@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131213143248) do
+ActiveRecord::Schema.define(:version => 20131215155434) do
 
   create_table "answers", :force => true do |t|
     t.integer  "user_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20131213143248) do
     t.datetime "updated_at",                     :null => false
     t.boolean  "added_video"
     t.boolean  "answered",    :default => false
+    t.integer  "score",       :default => 0
   end
 
   create_table "topics_users", :id => false, :force => true do |t|
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20131213143248) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.string   "avatar"
+    t.integer  "score",                  :default => 0
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

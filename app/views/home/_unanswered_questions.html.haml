@@ -1,0 +1,7 @@
+%h4 Unanswered questions
+%ul
+  - @unanswered.each do |topic|
+    %li
+      =link_to topic.question, topic
+
+  = will_paginate @unanswered, param_name: "unanswered_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"

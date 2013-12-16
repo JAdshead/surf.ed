@@ -13,7 +13,7 @@ class AnswersController < ApplicationController
 
   def create
     @answer.topic_id = params[:topic_id]
-    
+    User.update_score(current_user)
     # set answered state of topic to true if first answer
     if @answer.topic.answers.count == 0
       @answer.topic.answered = true
@@ -52,12 +52,19 @@ class AnswersController < ApplicationController
 
   def vote_up
     @answer = Answer.find params[:id]
+    User.update_score(@answer.user)
+
+    # testin this
+    User.invitaion_update(@answer.user)
+    @answer.user.save
+
     current_user.vote_for(@answer)
     redirect_to @answer.topic
   end
 
   def vote_down
     @answer = Answer.find params[:id]
+    User.update_score(current_user)
     current_user.vote_against(@answer)
     redirect_to @answer.topic
   end

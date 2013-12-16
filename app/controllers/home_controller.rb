@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
 
   def index
-    @users = User.all
-    @topics = Topic.plusminus_tally.order('plusminus_tally DESC').all
-    @unanswered = Topic.where(answered: false)
+    @users = User.paginate(page: params[:user_page], per_page: 5).order("score DESC").all
+    @topics = Topic.paginate(page: params[:topic_page], per_page: 10).order("score DESC").all
+    @unanswered = Topic.paginate(page: params[:unanswered_page], per_page: 10).order("score DESC").where(answered: false)
   end
 
 end

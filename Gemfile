@@ -13,7 +13,7 @@ gem 'cancan'
 gem 'youtube_it'
 gem 'textacular', '~> 3.0'
 gem 'thumbs_up'
-
+gem 'will_paginate', '~> 3.0'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem 'rmagick'

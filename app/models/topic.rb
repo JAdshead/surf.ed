@@ -40,6 +40,7 @@ class Topic < ActiveRecord::Base
     self.incompletes.map{|r| r.destroy}
   end
 
+
   private
     def self.video_options(params)
       opts = {:title => params[:question],
