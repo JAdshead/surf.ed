@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 
   def self.invitaion_update(user)
     if user.score > 10
-      user.invitation_limit = 10
+      user.invitation_limit = 5
       user.save
     end
   end
