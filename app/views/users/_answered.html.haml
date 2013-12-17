@@ -1,7 +1,8 @@
-%p Answered Questions
-%ul
-  - @answers.each do |answer|
-    %li
-      =link_to answer.topic.question, answer.topic
-      = answer.answer
-  = will_paginate @answers, param_name: "answered_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"
+%h2 Answered Questions
+.tab-content
+  %ul
+    - @answers.each do |answer|
+      %li
+        =link_to answer.topic.question, answer.topic
+        = answer.answer
+    = will_paginate @answers, param_name: "answered_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"

@@ -1,6 +1,8 @@
-%h4 STARRED 
-%ul
-  - @starred.each do |star|
-    %li
-      =link_to star.question, star
-  = will_paginate @starred, param_name: "starred_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"
+
+%h2 Starred Questions 
+.tab-content
+  %ul
+    - @starred.each do |star|
+      %li
+        =link_to star.question, star
+    = will_paginate @starred, param_name: "starred_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"

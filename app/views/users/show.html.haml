@@ -5,9 +5,13 @@
     .user-header.cf  
       .avatar-user
         = image_tag avatar_url(@user)
-      %h4= @user.name
+      .user-name
+        %h4= @user.name
 
-      %P SCORE #{@user.score}
+      .score
+        %P SCORE 
+        .score-num
+          %p #{@user.score}
     / = link_to "EDIT PROFILE", edit_user_registration_path
     / %br
     / = link_to 'INVITE', new_user_invitation_path
@@ -36,22 +40,26 @@
     .posted-content
       =render 'posted'
 
-
     .answered-content
       =render 'answered'
     
     
     .invite-content
-      - if @user.invited_by_id
-        %p 
-          User was invited by 
-          =link_to User.find(@user.invited_by_id).name, User.find(@user.invited_by_id)
+      %h2 Invite Friends
+      .invited-by
+        - if @user.invited_by_id
+          %p 
+            #{@user.name} invited by 
+            =link_to User.find(@user.invited_by_id).name, User.find(@user.invited_by_id)
 
       - if @user.invitation_limit == 0
         %p You must earn invitations
       - else
-        %p Invitations left  #{@user.invitation_limit}
-      =render "new"
+        %p Invitations left 
+        .invite-number
+          %p=@user.invitation_limit
+      .invite-form
+        =render "new"
 
     .edit-content
       =render "edit"

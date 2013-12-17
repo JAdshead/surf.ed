@@ -1,6 +1,7 @@
-%p USERS QUESTIONS 
-%ul
-  - @user_questions.each do |topic|
-    %li
-      =link_to topic.question, topic
-  = will_paginate @user_questions, param_name: "questions_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"
+%h2 Posted Questions 
+.tab-content
+  %ul
+    - @user_questions.each do |topic|
+      %li
+        =link_to topic.question, topic
+    = will_paginate @user_questions, param_name: "questions_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"
