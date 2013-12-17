@@ -1,0 +1,35 @@
+$main-color: #51C5DF; 
+$dark-text-color: rgba(0,0,0,0.58);
+
+.user-page-content {
+  float: left;
+  padding-left: 1em;
+  background: white;
+  max-width: 40em;
+  
+}
+
+.user-page-head {
+  background: white;
+  float: left;
+  padding-right: 1em;
+  
+}
+
+.active {
+  font-weight: 600;
+  padding-left: 1em;
+}
+
+.tab {
+  cursor: pointer;
+}
+
+.user-header{
+  padding-bottom: 1em;
+}
+
+
+.posted-content, .answered-content, .invite-content, .edit-content {
+  display: none;
+}

@@ -73,6 +73,7 @@ ul {
   background-color: $main-color;
   padding-bottom: 2em;
   padding-top: 2em;
+  padding-bottom: 5em;
 }
 
 .inner-container {
@@ -105,14 +106,16 @@ p {
 
 .avatar-main img{
   width: 2.5em;
+}
 
+.avatar-user img {
+  width: 5em;
+  padding: auto;
 }
 
 .icon {
   display: inline; 
   padding-left: 1em;
-  
-  
 }
 
 .icon {
@@ -150,8 +153,6 @@ input {
   display: inline-block;
   width: 100%;
 }
-
-
 
 
 
@@ -223,3 +224,16 @@ input {
     height: 1%; }
   *:first-child + html .pagination {
     overflow: hidden; }
+
+// *********
+// USER PAGE
+// *********
+
+
+
+
+
+
+
+
+

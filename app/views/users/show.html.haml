@@ -1,26 +1,60 @@
-%h2= @user.name
 
-.avatar-main
-  = image_tag avatar_url(@user)
+.user-page-container.cf
+    
+  .user-page-head.cf
+    .user-header.cf  
+      .avatar-user
+        = image_tag avatar_url(@user)
+      %h4= @user.name
 
-= link_to "EDIT PROFILE", edit_user_registration_path
+      %P SCORE #{@user.score}
+    / = link_to "EDIT PROFILE", edit_user_registration_path
+    / %br
+    / = link_to 'INVITE', new_user_invitation_path
 
-- if @user.invitation_limit == 0
-  %p You must earn invitations
-- else
-  %p Invitations left  #{@user.invitation_limit}
-  = link_to 'INVITE', new_user_invitation_path
+    .starred-tab.tab.active
+      %p STARRED
 
-%p User has posted #{@user.topics.count} questions 
+    .posted-tab.tab
+      %p POSTED
 
-%p User has answered #{@user.answers.count} questions
+    .answered-tab.tab
+      %p ANSWERED
 
-%p User has STARED #{@user.starred.count} questions
+    .invite-tab.tab
+      %p INVITE
 
-%P Users Score is #{@user.score}
+    .edit-tab.tab
+      %p EDIT
 
 
-- if @user.invited_by_id
-  %p 
-    User was invited by 
-    =link_to User.find(@user.invited_by_id).name, User.find(@user.invited_by_id)
+  .user-page-content.cf
+
+    .starred-content
+      =render 'starred'
+
+    .posted-content
+      =render 'posted'
+
+
+    .answered-content
+      =render 'answered'
+    
+    
+    .invite-content
+      - if @user.invited_by_id
+        %p 
+          User was invited by 
+          =link_to User.find(@user.invited_by_id).name, User.find(@user.invited_by_id)
+
+      - if @user.invitation_limit == 0
+        %p You must earn invitations
+      - else
+        %p Invitations left  #{@user.invitation_limit}
+      =render "new"
+
+    .edit-content
+      =render "edit"
+
+
+
