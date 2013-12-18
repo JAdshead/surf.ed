@@ -20,4 +20,6 @@
 //= require main.js.coffee
 //= require video.js
 //= require pagination.js
+//= require upload-button.js.coffee
+//= require user-page.js.coffee
 

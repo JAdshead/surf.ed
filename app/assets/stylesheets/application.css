@@ -15,5 +15,7 @@
  *= require search-box
  *= require main
  *= require footer
+ *= require home-page
+ *= require user-page
 
  */
