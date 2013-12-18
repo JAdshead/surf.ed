@@ -74,7 +74,7 @@ SurfEd::Application.configure do
     password: ENV["MANDRILL_API_KEY"] 
   }
 
-  config.action_mailer.default_url_options = { :host => 'http://surf-ed.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'surf-ed.herokuapp.com/' }
 
   
 end
