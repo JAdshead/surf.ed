@@ -7,15 +7,16 @@
 
     <%= f.text_field :name, :autofocus => true, placeholder: "Name" %></div>
 
-    <div><%= f.label :avatar %><br />
-    <%= f.file_field :avatar %></div>
+    <div class="file-upload btn">
+      <p>Add Avatar</p>
+    <%= f.file_field :avatar, placeholder: "Choose Avatar", class: "uploadBtn upload" %></div>
 
-    <p><%= f.label :password %><br />
-    <%= f.password_field :password %></p>
+    <p>
+    <%= f.password_field :password, placeholder: "Password" %></p>
 
-    <p><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %></p>
+    <p>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %></p>
 
-    <p><%= f.submit t("devise.invitations.edit.submit_button") %></p>
+    <div class= "form-button"><%= f.submit t("devise.invitations.edit.submit_button") %></div>
   <% end %>
 </div>
