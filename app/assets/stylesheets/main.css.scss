@@ -1,6 +1,6 @@
 $main-color: #51C5DF; 
 $dark-text-color: rgba(0,0,0,0.58);
-
+$orange-color: #FFAB58;
 html, body {
   font-family: 'Open Sans', sans-serif;
   background-color: $main-color;
@@ -50,7 +50,11 @@ html, body {
 
 a:hover {
   text-decoration: none;
+  color: $orange-color;
+
 }
+
+h1 a:hover { color: $dark-text-color; }
 
 ul {
   list-style: none;
@@ -335,7 +339,7 @@ input {
 }
 
 input:focus {
-  
+
 }
 /************
 * Main menu page - home#index *

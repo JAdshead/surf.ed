@@ -12,4 +12,4 @@ $ ->
     if $('.checkbox-yes').is(':visible')
       $('.checkbox').addClass "selected";
 
-  $(".actions.form-button.submit")
+  

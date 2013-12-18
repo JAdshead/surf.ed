@@ -1,7 +1,12 @@
 %h2 Search results
+.tab-content
+  %ul
+    - @topics.order("score DESC").each do |topic|
+      %li.answer-head
+        %h4=link_to topic.question, topic
+        %p 
+          = pluralize(topic.score, "Star")
+        %p 
+          = pluralize(topic.answers.count, "Answer")
 
-%ul
-  - @topics.each do |topic|
-    %li
-      =link_to topic.question, topic
-      / %p By #{topic.user.name} 
+        / %p By #{topic.user.name} 
