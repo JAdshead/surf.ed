@@ -4,5 +4,13 @@
   %ul
     - @starred.each do |star|
       %li
-        =link_to star.question, star
+        .answer-head
+          =link_to star.question, star
+        .topic-answer.asked            
+          %h4 Top Answer
+          - @top_answer = star.answers.plusminus_tally.order('plusminus_tally DESC').first
+          %p= @top_answer.answer
+          =link_to @top_answer.user do
+            %p By #{@top_answer.user.name}
+
     = will_paginate @starred, param_name: "starred_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"

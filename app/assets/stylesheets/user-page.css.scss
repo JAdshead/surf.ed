@@ -1,6 +1,6 @@
 $main-color: #51C5DF; 
 $dark-text-color: rgba(0,0,0,0.58);
-
+$orange-color: #FFAB58;
 .user-page-content {
   float: left;
   padding-left: 1em;
@@ -59,7 +59,7 @@ $dark-text-color: rgba(0,0,0,0.58);
 
 
 .user-page-content .pagination {
-  position: absolute;
+  
 }
 
 h2 {
@@ -81,23 +81,86 @@ h2 {
   padding-top: 1em;
   font-size: 2em;
   font-weight: 100;
+  p{color: #FFAB58;}
 }
 
 .tab-content {
   padding-top: 1em;
+  li{ padding-bottom: 1em}
+  ul{margin: 0;}
+}
+
+.topic-quesiton {
+  padding-left: 0em;
+}
+
+.topic-answer {
+  padding-top: 1em;
+  p.answer {padding-left: 1em}
+  p {padding-top: 0.5em;}
+  h4 {display: inline}
+}
+
+.topic-user-image{
+  max-width: 3em;
+  padding-bottom: 1em;
+  display: inline-block;
+}
+
+.answer-head{
+  h4 {
+    padding-bottom: 0.5em;
+    // padding-top: 0.5em;
+    // display: inline-block;
+  }
+}
+
+.answer-number {
+  font-size: 1.5em;
+  padding-left: 2em;
+  p {color: #FFAB58;}
+  display: inline-block;
+}
+
+p.answer {
+  padding-left: 3em;
+}
+
+.topic-answer.asked {
+  padding-top: 1em;
+  h4 {padding-bottom: 0.5em;}
+}
+.topic-answer-head {
+  display: inline-block;
+}
+
+%p.answer-score {
+  display: inline-block;
+}
+
+.answer-score {
+  h4 {display: inline-block;}
+}
+
+.answer-score{
+  display: inline-block;
+  padding-top: 1em;
+}
+
+.answer-number{
+  display: inline-block;
+  padding:0;
+  padding-left: 0.5em;
+}
+.asked h5 {
+  font-weight: 400;
+  font-size: 1.2em;
 }
 
 
-
-
-
-
-
-
-
-
-
-
+.score-num {
+  padding-top: 0.5em;
+}
 
 
 

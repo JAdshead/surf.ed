@@ -261,8 +261,82 @@ input {
 
 .form-button {
   margin-top: 1em;
+  font-size: 1.2em;
 }
 
+.checkbox{
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.1em;
+  padding: 1em;
+  background-color: $main-color;
+  color: white;
+  font-weight: 300;
+  text-transform:uppercase;
+  p { color: white;
+      font-size: 1.2em;
+    }
+
+  &:hover{
+      box-shadow: none;
+      border:2px solid #FFAB58;
+      background-color: white;
+      
+      p { color: #FFAB58;
+        font-size: 1.2em;
+      }
+    }
+
+}
+
+.checkbox input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.checkbox input:checked {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.checkbox-yes{
+  display: none;
+}
+
+.devise-form h3 {
+  font-weight: 300;
+  font-size: 1.3em;
+}
+
+.selected {
+  box-shadow: none;
+  border:2px solid #FFAB58;
+  background-color: white;
+  
+  p { color: #FFAB58;}
+}
+
+.shared-links {
+  padding-top: 1em;
+  a:hover { color:#FFAB58 }
+}
+
+input:focus {
+  
+}
 /************
 * Main menu page - home#index *
 ************/

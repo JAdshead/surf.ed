@@ -20,7 +20,7 @@
       %p STARRED
 
     .posted-tab.tab
-      %p POSTED
+      %p ASKED
 
     .answered-tab.tab
       %p ANSWERED
@@ -55,7 +55,7 @@
       - if @user.invitation_limit == 0
         %p You must earn invitations
       - else
-        %p Invitations left 
+        %p Invitations remaining 
         .invite-number
           %p=@user.invitation_limit
       .invite-form

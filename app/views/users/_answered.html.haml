@@ -1,8 +1,21 @@
-%h2 Answered Questions
+%h2 Top Answers
 .tab-content
   %ul
     - @answers.each do |answer|
       %li
-        =link_to answer.topic.question, answer.topic
-        = answer.answer
+        .answer-head
+          =link_to answer.topic.user do
+
+            %h4 Question by #{answer.topic.user.name}
+          .topic-quesiton
+            =link_to answer.topic.question, answer.topic
+
+        .topic-answer
+          .topic-answer-head
+            %h4 Answer Score
+            %p.answer-score
+              .answer-number
+                %p= answer.plusminus
+          %p.answer= answer.answer
+          
     = will_paginate @answers, param_name: "answered_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"

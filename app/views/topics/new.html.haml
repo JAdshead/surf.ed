@@ -2,12 +2,17 @@
   %ul.errors
   / - @album.errors.full_messages.each do |error|
   /   %li= error
+  .devise-form
+    %h2 Ask a Question
 
-  %h3 Ask a Question
-
-  = form_for @topic, :url => upload_new_topic_path do |f|
-    = f.text_field :question, placeholder: "Whats your question ?"
-    = f.check_box :added_video
-    = f.label :added_video, "Add Video"
-    .actions
-      = f.submit 'Submit / or add Video'
+    = form_for @topic, :url => upload_new_topic_path do |f|
+      = f.text_field :question, placeholder: "Whats your question ?",autocomplete: :off, autofocus: true;
+  
+      %h3 Do You want to Add Video ?
+      .checkbox.form-button
+        .checkbox-box
+          = f.check_box :added_video
+          %p.checkbox-no No
+          %p.checkbox-yes Yes
+      .actions.form-button.submit
+        = f.submit "Next"
