@@ -30,18 +30,18 @@ html, body {
 * SET BASIC SITE *
 ************/
 .surf-container {
-
   p, a, h1, h2, h3, h4, h5, h6 {
-    margin: 0px;
-    padding: 0px;
+    margin: auto;
+    padding: auto;
     color: $dark-text-color;
   }
+  padding: 0em;
 }
 
 .site-header {
   background-color: white;
-  padding-top: 1em;
-  padding-bottom: 1em;
+
+  padding: 1em 2em;
   h1{
     float:left;
   }
@@ -61,12 +61,12 @@ ul {
 }
 
 .main, .head, .site-header{
-  padding-left: 10em;
-  padding-right: 10em;
+  padding-left: auto;
+  padding-right: auto;
 }
 
 .head {
-  padding-top: 2em;
+  padding-top: 1em;
 }
 
 .head {
@@ -74,14 +74,11 @@ ul {
 }
 .main{
   background-color: $main-color;
-  padding-bottom: 2em;
-  padding-top: 2em;
   padding-bottom: 5em;
 }
 
 .inner-container {
-
-  padding: 2em;
+  padding: 3em 5em;
   background-color: white;
 }
 
@@ -89,6 +86,9 @@ p {
   color: #fff;
 }
 
+.header-margin{
+  padding-bottom: 2em;
+}
 
 /************
 * LOG IN NAV *
@@ -172,6 +172,8 @@ input {
 }
 
 .devise-form {
+  text-align: center;
+  width: 50%;
   h2 {
     font-size: 2em;
     font-weight: 300;
@@ -202,7 +204,6 @@ input {
   }
 
   form {
-    width: 50%;
     margin: 0 0%;
   }
 }
@@ -333,6 +334,7 @@ input {
 .devise-form h3 {
   font-weight: 300;
   font-size: 1.3em;
+
 }
 
 .selected {
