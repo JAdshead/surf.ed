@@ -1,10 +1,12 @@
-$main-color: #51C5DF; 
+$main-color: #3a8ea0; 
 $dark-text-color: rgba(0,0,0,0.58);
 $orange-color: #FFAB58;
 
 .menu {
-  text-align: center;
+  border-right: 2px solid $main-color;
+  float: left;
   padding: 0em;
+  padding-right: 2em;
   h3:hover {
     color:$orange-color;
   }
@@ -14,8 +16,9 @@ $orange-color: #FFAB58;
   padding-left: 0em;
 }
 
-.tab-content{
-  padding-left: 1em;
+.tab-content {
+  padding-left: 2em;
+  padding-top: 0em;
 }
 
 .index-tab {
@@ -28,5 +31,13 @@ $orange-color: #FFAB58;
 }
 
 .top-users-tab {
-  float: right;
+  float: left;
+}
+
+.logo img {
+  width: 10em;
+}
+.logo {
+  text-align: center;
+  padding-bottom: 1em;
 }

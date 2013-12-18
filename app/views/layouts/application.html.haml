@@ -4,7 +4,7 @@
     %title SurfEd
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
-    %link{href: "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800", rel: "stylesheet", type: "text/css"}/
+    %link{href: "http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900", rel: "stylesheet", type: "text/css"}/
     %script type="text/javascript" src="jquery-2.0.3.js"
 
     = csrf_meta_tags
@@ -14,15 +14,16 @@
         %h1=link_to "SURF.ED", root_path
         .user-login
           .icon
-            = link_to "ASK QUESTION", new_topic_path
+            = link_to new_topic_path do
+              =image_tag '126.png'
           
           .icon    
-            %a.search SEARCH
+            %a.search=image_tag 'search.png'
 
           - if user_signed_in?            
             .icon
               = link_to destroy_user_session_path, method: :delete do
-                LOG OUT
+                =image_tag '130.png'
 
             .avatar-main.icon
               = link_to current_user do

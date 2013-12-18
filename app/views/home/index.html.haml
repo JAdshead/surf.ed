@@ -1,9 +1,12 @@
 .menu
+  
+  .logo=image_tag 'placeholder.png'
+
   .q.top-q-tab.active
     %h3 Top Questions
 
   .q.unanswered-q-tab
-    %h3 Unanswered Questions
+    %h3 Unanswered
 
   .q.top-users-tab
     %h3 Top Users
@@ -11,13 +14,16 @@
 
 .index-content
   .top-questions-content.tab-content
+    %h2 Most Popular Questions
     #questions
       = render 'top_questions'
 
   .top-users-content.tab-content
+    %h2 Top Users
     #top_users
       = render 'top_users'
 
   .unanswered-questions-content.tab-content
+    %h2 Unanswered Questions
     #unanswered
       = render 'unanswered_questions'

@@ -1,6 +1,8 @@
-$main-color: #51C5DF;
-$main-color-a: rgba(83,198,223,0.9); 
+$main-color-a: #3a8ea0; 
+$main-color: #3a8ea0; 
+$dark-text-color: rgba(0,0,0,0.58);
 $orange-color: #FFAB58;
+
 .tt-hint {
   background-color: $main-color;
 }
@@ -10,7 +12,7 @@ $orange-color: #FFAB58;
 }
 
 .tt-suggestion {
-  background-color: rgba(250,250,250,0.95);
+  background-color: $orange-color;
   padding: 1em;
   color: $main-color;
 }

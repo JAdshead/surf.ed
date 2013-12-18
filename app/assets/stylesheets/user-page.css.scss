@@ -1,6 +1,8 @@
-$main-color: #51C5DF; 
+$main-color-a: #3a8ea0; 
+$main-color: #3a8ea0; 
 $dark-text-color: rgba(0,0,0,0.58);
 $orange-color: #FFAB58;
+
 .user-page-content {
   float: left;
   padding-left: 1em;
@@ -17,12 +19,12 @@ $orange-color: #FFAB58;
   background: white;
   float: left;
   padding-right: 1em;
-  border-right: 2px solid $main-color;
+  border-right: 2px solid $orange-color;
 }
 
 .active {
   font-weight: 500;
-  p {color: #FFAB58;}
+  p {color: $orange-color;}
 }
 
 .tab {
@@ -58,10 +60,6 @@ $orange-color: #FFAB58;
 }
 
 
-.user-page-content .pagination {
-  
-}
-
 h2 {
     font-size: 2em;
     font-weight: 300;
@@ -81,7 +79,7 @@ h2 {
   padding-top: 1em;
   font-size: 2em;
   font-weight: 100;
-  p{color: #FFAB58;}
+  p{color: $orange-color;}
 }
 
 .tab-content {
@@ -118,7 +116,7 @@ h2 {
 .answer-number {
   font-size: 1.5em;
   padding-left: 2em;
-  p {color: #FFAB58;}
+  p {color: $orange-color;}
   display: inline-block;
 }
 
@@ -163,7 +161,9 @@ p.answer {
 }
 
 
-
+.user-page-container {
+  padding-left: 2em;
+}
 
 
 
