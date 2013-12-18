@@ -3,6 +3,8 @@ $dark-text-color: rgba(0,0,0,0.58);
 $orange-color: #FFAB58;
 
 .menu {
+  text-align: center;
+  padding: 0em;
   h3:hover {
     color:$orange-color;
   }
@@ -18,4 +20,13 @@ $orange-color: #FFAB58;
 
 .index-tab {
   padding-bottom: 1em;
+}
+
+
+.top-q-tab {
+  float: left;
+}
+
+.top-users-tab {
+  float: right;
 }

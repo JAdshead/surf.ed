@@ -11,7 +11,7 @@
       %h3 Do You want to Add Video ?
       .checkbox.form-button
         .checkbox-box
-          = f.check_box :added_video
+          .checkbox-value= f.check_box :added_video, {id: "boom-box"}
           %p.checkbox-no No
           %p.checkbox-yes Yes
       .actions.form-button.submit

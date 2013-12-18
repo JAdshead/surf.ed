@@ -1,71 +1,99 @@
 :javascript
   var topic = JSON.parse('#{@topic.to_json}');
 
+.question-top-bar
+  .star-location
+    - if can? :vote_up, @topic
+      - if current_user.voted_for?(@topic)
+        .star-image=image_tag 'starred.png'
+      -else
+        = link_to vote_up_topic_path(@topic), :method => :post, class: "form-button" do
+          .star-image=image_tag 'star.png'
 
-%h3= @topic.question
+  %h2= @topic.question
 
-- if can? :vote_up, @topic
-  - if current_user.voted_for?(@topic)
-    %p STARRED
-  -else
-    = link_to 'Star', vote_up_topic_path(@topic), :method => :post, class: "form-button"
+  .links-user
+    = link_to "Edit", edit_topic_path(@topic)
+    |
+    = link_to "Delete", topic_path(@topic), :method => "delete"
 
-%br 
-
-- if @topic.yt_video_id
-  #player
-  
-%br
-= link_to "Edit", edit_topic_path(@topic)
-|
-= link_to "Delete", topic_path(@topic), :method => "delete"
-
-%p
-  by
-  = @topic.user.name
-%p 
-  Email :
-  = @topic.user.email
+  .user-link
+    %h4
+      =link_to @topic.user do
+        =image_tag avatar_url(@topic.user)
+        = @topic.user.name
 
 
-- if can? :create, @answer
-  %h3 Form to Add a Answer
-  / %ul.errors
-  /   - @answer.errors.full_messages.each do |error|
-  /     %li= error
-  = form_for(@answer) do |f|
-    = hidden_field_tag :topic_id, @topic.id
-    = f.text_field :answer, placeholder: "Answer Question"
-    %br/
-    .comments-form-button
-      = f.submit
+.question-video.cf
+  - if @topic.yt_video_id
+    #player
 
-- @topic.answers.plusminus_tally.order('plusminus_tally DESC').each do |answer|
+
+.top-answer.cf
+  - top = @topic.answers.plusminus_tally.order('plusminus_tally DESC').first
+  %h4= top.answer
   .votes
-    - if can? :vote_up, :vote_down, answer
+    - if can? :vote_up, :vote_down, top
       %br
-      - if current_user.voted_against?(answer)
-        %p You didnt find this helpful
-      - elsif current_user.voted_for?(answer)
-        %p You found this helpful
+      - if current_user.voted_against?(top)
+        .vote-thumb=image_tag "065.png"
+      - elsif current_user.voted_for?(top)
+        .vote-thumb=image_tag "064.png"
       - else 
-        %p Do You find this helpful ?
-        = link_to 'YES', vote_up_answer_path(answer), :method => :post, class: "form-button"
-        = link_to 'NO', vote_down_answer_path(answer), :method => :post, class: "form-button"
-  %p 
-    Answer Given by 
-    = answer.user.name
-  = answer.answer
-  - if !!answer.votes
+        .vote-thumb
+          = link_to vote_up_answer_path(top), :method => :post, class: "form-button" do
+            =image_tag "064.png"
+        .vote-thumb
+          = link_to vote_down_answer_path(top), :method => :post, class: "form-button" do
+            =image_tag "065.png"
+
+
+.other-answers.cf
+  .answer-form-topics
+    - if can? :create, @answer
+      %h2 Add a Answer
+      / %ul.errors
+      /   - @answer.errors.full_messages.each do |error|
+      /     %li= error
+      .devise-form
+        = form_for(@answer) do |f|
+          = hidden_field_tag :topic_id, @topic.id
+          = f.text_field :answer, placeholder: "Answer Question"
+          %br/
+          .comments-form-button
+            .form-button= f.submit
+
+  - @topic.answers.plusminus_tally.order('plusminus_tally DESC').each do |answer|
+    .votes
+      - if can? :vote_up, :vote_down, answer
+        %br
+        - if current_user.voted_against?(answer)
+          .vote-thumb=image_tag "065.png"
+        - elsif current_user.voted_for?(answer)
+          .vote-thumb=image_tag "064.png"
+        - else 
+          .vote-thumb
+            = link_to vote_up_answer_path(answer), :method => :post, class: "form-button" do
+              =image_tag "064.png"
+          .vote-thumb
+            = link_to vote_down_answer_path(answer), :method => :post, class: "form-button" do
+              =image_tag "065.png"
     %p
-      Score : 
-      = (answer.votes_for - answer.votes_against)
-  %br
-  - if can? :edit, answer
-    = link_to 'Edit Answer', edit_answer_path(answer)
-  - if can? :destroy, answer
-    = link_to 'Delete Answer', answer, method: :delete
-  %hr
+      =link_to answer.user do
+        Answer Given by 
+        = answer.user.name
+    .answer-topic-show
+      %p= answer.answer
+    - if !!answer.votes
+      %p
+        Score : 
+        = (answer.votes_for - answer.votes_against)
+    %br
+    - if can? :edit, answer
+      = link_to 'Edit Answer', edit_answer_path(answer)
+    - if can? :destroy, answer
+      = link_to 'Delete Answer', answer, method: :delete
+    %hr
 
 
 

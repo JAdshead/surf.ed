@@ -13,18 +13,13 @@
       .site-header.cf
         %h1=link_to "SURF.ED", root_path
         .user-login
-          / ask question
           .icon
             = link_to "ASK QUESTION", new_topic_path
           
           .icon    
             %a.search SEARCH
 
-          - if user_signed_in?   
-            / edit
-           
-            / logout
-         
+          - if user_signed_in?            
             .icon
               = link_to destroy_user_session_path, method: :delete do
                 LOG OUT

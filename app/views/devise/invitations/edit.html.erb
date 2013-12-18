@@ -5,17 +5,19 @@
     <%= devise_error_messages! %>
     <%= f.hidden_field :invitation_token %>
 
-    <%= f.text_field :name, :autofocus => true, placeholder: "Name" %></div>
+    <%= f.text_field :name, :autofocus => true, placeholder: "Name" %>
 
     <div class="file-upload btn">
       <p>Add Avatar</p>
     <%= f.file_field :avatar, placeholder: "Choose Avatar", class: "uploadBtn upload" %></div>
 
-    <p>
-    <%= f.password_field :password, placeholder: "Password" %></p>
+    <div>
+    <%= f.password_field :password, placeholder: "Password" %>
+    </div>
 
-    <p>
-    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %></p>
+    <div>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    </div>
 
     <div class= "form-button"><%= f.submit t("devise.invitations.edit.submit_button") %></div>
   <% end %>

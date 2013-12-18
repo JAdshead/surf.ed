@@ -24,7 +24,7 @@ function widthCheck() {
     width = 480
   }
   else {
-    width = w*0.6
+    width = w*0.68
   };
   return width
 }

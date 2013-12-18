@@ -1,0 +1,80 @@
+.star-image img {
+  height: 2em;
+}
+
+.star-image img:hover {
+  height: 2.1em;
+}
+
+.question-top-bar {
+  padding:0 2em;
+  padding-bottom: 2em;
+  h2 { 
+    padding: 0em 1em;
+    padding-left: 0em;
+   
+    display: inline-block;
+
+  }
+
+}
+
+.question-video {
+  padding-top: 1em;
+  padding-left: 2em;
+}
+
+.links-user {
+  padding: 1em 0;
+  
+}
+
+.other-answers{
+  padding: 2em;
+}
+
+.star-location {
+  padding-top: 1.2em;
+  padding-bottom: 1em;
+  
+  .star-image {
+    display: inline-block;
+    height: 2em;
+  }
+}
+
+.top-answer {
+  padding-top: 1em;
+  padding-left: 2em;
+}
+
+.user-link img{
+  height: 1em;
+}
+
+.user-link {
+  padding-top: 1em;
+}
+
+
+.vote-thumb {
+  img { height: 2em}
+  display: inline-block;
+}
+.vote-thumb:hover {
+  img { height: 2.1em}
+  display: inline-block;
+}
+
+.answer-form-topics {
+  text-align: center;
+ .devise-form form{ 
+  padding-top: 1em;
+  display: inline-block;
+ }
+}
+
+
+.answer-topic-show {
+  padding: 1em;
+}

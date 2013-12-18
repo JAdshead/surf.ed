@@ -1,7 +1,10 @@
-%h2 Part 2 of upload
+.devise-form
+  %h2 Part 2 of upload
 
-= form_tag @upload_info[:url], multipart: true do
-  = hidden_field_tag :token, @upload_info[:token]
-  = label_tag :file
-  = file_field_tag :file
-  = submit_tag "Upload and submit"
+  = form_tag @upload_info[:url], multipart: true do
+    = hidden_field_tag :token, @upload_info[:token]
+    .file-upload.btn
+      .p Click to choose video
+      = file_field_tag :file,{class: "uploadBtn upload"}
+
+    .form-button= submit_tag "Upload and submit"

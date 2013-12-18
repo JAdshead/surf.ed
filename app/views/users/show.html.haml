@@ -24,12 +24,13 @@
 
     .answered-tab.tab
       %p ANSWERED
+    - if can? :invite, @user
+      .invite-tab.tab
+        %p INVITE
 
-    .invite-tab.tab
-      %p INVITE
-
-    .edit-tab.tab
-      %p EDIT
+    - if can? :edit, @user
+      .edit-tab.tab
+        %p EDIT
 
 
   .user-page-content.cf
