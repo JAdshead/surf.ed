@@ -27,7 +27,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :avatar_resize do
-    process :resize_to_fill => [120, 120]
+    process :resize_to_fill => [220, 220]
   end
 
 end

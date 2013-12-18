@@ -20,7 +20,7 @@ class Ability
 
       can :create, Topic
       can :upload, Topic
-      can :edit, Topic do |user|
+      can :manage, Topic do |topic|
         user == topic.user
       end
 

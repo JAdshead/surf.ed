@@ -8,14 +8,16 @@
   .q.top-users-tab
     %h3 Top Users
 
-.top-questions-content
-  #questions
-    = render 'top_questions'
 
-.top-users-content
-  #top_users
-    = render 'top_users'
+.index-content
+  .top-questions-content.tab-content
+    #questions
+      = render 'top_questions'
 
-.unanswered-questions-content
-  #unanswered
-    = render 'unanswered_questions'
+  .top-users-content.tab-content
+    #top_users
+      = render 'top_users'
+
+  .unanswered-questions-content.tab-content
+    #unanswered
+      = render 'unanswered_questions'

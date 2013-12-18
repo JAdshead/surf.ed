@@ -74,7 +74,7 @@ class TopicsController < ApplicationController
     else
       flash[:error] = "Question unsuccessfully deleted"
     end
-    redirect_to topics_path
+    redirect_to root_path
   end
 
   def vote_up

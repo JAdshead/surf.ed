@@ -1,0 +1,21 @@
+$main-color: #51C5DF; 
+$dark-text-color: rgba(0,0,0,0.58);
+$orange-color: #FFAB58;
+
+.menu {
+  h3:hover {
+    color:$orange-color;
+  }
+}
+
+.index-content {
+  padding-left: 0em;
+}
+
+.tab-content{
+  padding-left: 1em;
+}
+
+.index-tab {
+  padding-bottom: 1em;
+}

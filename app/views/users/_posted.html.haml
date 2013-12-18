@@ -1,0 +1,22 @@
+%h2 Asked Questions 
+.tab-content
+  %ul
+    - @user_questions.each do |topic|
+      %li
+        .answer-head
+          %h4 Question
+          =link_to topic.question, topic
+          %br
+          .answer-score
+            %h4 Total Stars
+            .answer-number
+              %p= topic.score
+        .topic-answer.asked            
+          %h5 Top Answer
+          - @top_answer = topic.answers.plusminus_tally.order('plusminus_tally DESC').first
+          .topic-user-image
+            =link_to @top_answer.user do
+              %p By #{@top_answer.user.name}
+          = @top_answer.answer
+
+    = will_paginate @user_questions, param_name: "questions_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"

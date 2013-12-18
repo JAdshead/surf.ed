@@ -1,6 +1,6 @@
 $main-color: #51C5DF; 
 $dark-text-color: rgba(0,0,0,0.58);
-
+$orange-color: #FFAB58;
 html, body {
   font-family: 'Open Sans', sans-serif;
   background-color: $main-color;
@@ -48,10 +48,13 @@ html, body {
 }
 
 
-
 a:hover {
   text-decoration: none;
+  color: $orange-color;
+
 }
+
+h1 a:hover { color: $dark-text-color; }
 
 ul {
   list-style: none;
@@ -73,6 +76,7 @@ ul {
   background-color: $main-color;
   padding-bottom: 2em;
   padding-top: 2em;
+  padding-bottom: 5em;
 }
 
 .inner-container {
@@ -105,14 +109,16 @@ p {
 
 .avatar-main img{
   width: 2.5em;
+}
 
+.avatar-user img {
+  width: 5em;
+  padding: auto;
 }
 
 .icon {
   display: inline; 
   padding-left: 1em;
-  
-  
 }
 
 .icon {
@@ -120,7 +126,7 @@ p {
 }
 
 /************
-* INPUT BOXS *
+* INPUT BOXS & FORMS *
 ************/
 
 input {
@@ -151,10 +157,190 @@ input {
   width: 100%;
 }
 
+.devise-form {
+  margin: 0 auto;
+}
+
+.devise-form {
+  width: 100%;
+  h2 {
+    font-size: 2em;
+    font-weight: 300;
+    padding-bottom: 0.5em;
+  }
+
+  input {
+    width: 100%;
+    padding: 1.5em;
+    padding-left: 0em;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    border-radius: 0px;
+    box-shadow: none;
+    &:focus{
+      box-shadow: none;
+      border-bottom: 1px solid #FFAB58;
+    }
+    &:hover{
+      box-shadow: none;
+      border-bottom: 1px solid #FFAB58;
+    }
+  }
+
+  #user_avatar {
+    padding: 2em;
+    margin-bottom: 1em;
+  }
+
+  form {
+    width: 50%;
+    margin: 0 0%;
+  }
+}
+
+.form-button input {
+  font-size: 1.1em;
+  padding: 1em;
+  background-color: $main-color;
+  color: white;
+  font-weight: 300;
+  text-transform:uppercase;
+  &:hover{
+      box-shadow: none;
+      border:2px solid #FFAB58;
+      background-color: white;
+      color: #FFAB58
+    }
+}
+
+.current-password {
+  ::-webkit-input-placeholder {
+    color: #FFAB58;
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: #FFAB58; 
+    font-size: 1.2em;
+    font-weight: 300; 
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: #FFAB58; 
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  :-ms-input-placeholder {  
+    color: #FFAB58;  
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+}
 
 
+// upload buttons
+.file-upload {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  text-transform:uppercase;
 
+}
 
+.file-upload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.form-button {
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+
+.checkbox{
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.1em;
+  padding: 1em;
+  background-color: $main-color;
+  color: white;
+  font-weight: 300;
+  text-transform:uppercase;
+  p { color: white;
+      font-size: 1.2em;
+    }
+
+  &:hover{
+      box-shadow: none;
+      border:2px solid #FFAB58;
+      background-color: white;
+      
+      p { color: #FFAB58;
+        font-size: 1.2em;
+      }
+    }
+
+}
+
+.checkbox input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.checkbox input:checked {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.checkbox-yes{
+  display: none;
+}
+
+.devise-form h3 {
+  font-weight: 300;
+  font-size: 1.3em;
+}
+
+.selected {
+  box-shadow: none;
+  border:2px solid #FFAB58;
+  background-color: white;
+  
+  p { color: #FFAB58;}
+}
+
+.shared-links {
+  padding-top: 1em;
+  a:hover { color:#FFAB58 }
+}
+
+input:focus {
+
+}
 /************
 * Main menu page - home#index *
 ************/
@@ -223,3 +409,16 @@ input {
     height: 1%; }
   *:first-child + html .pagination {
     overflow: hidden; }
+
+// *********
+// USER PAGE
+// *********
+
+
+
+
+
+
+
+
+

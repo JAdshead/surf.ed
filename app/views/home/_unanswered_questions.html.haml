@@ -1,7 +1,9 @@
-%h4 Unanswered questions
-%ul
-  - @unanswered.each do |topic|
-    %li
-      =link_to topic.question, topic
+.index-tab
+  %ul
+    - @unanswered.each do |topic|
+      %li
+        =link_to topic.question, topic
+        =link_to topic do
+          %p= pluralize(topic.score, "Star")
 
-  = will_paginate @unanswered, param_name: "unanswered_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"
+    = will_paginate @unanswered, param_name: "unanswered_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"

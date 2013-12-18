@@ -1,8 +1,8 @@
-%h4 Top Questions
-%ul
-  - @topics.each do |topic|
-    %li
-      =link_to topic.question, topic
-      Stars:
-      = topic.votes_for
-  = will_paginate @topics, param_name: "topic_page",:page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"
+.index-tab
+  %ul
+    - @topics.each do |topic|
+      %li
+        =link_to topic.question, topic
+        %p 
+          = pluralize(topic.score, "Star")
+    = will_paginate @topics, param_name: "topic_page",:page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"
