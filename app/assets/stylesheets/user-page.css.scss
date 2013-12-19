@@ -1,7 +1,7 @@
 $main-color-a: #3a8ea0; 
 $main-color: #3a8ea0; 
 $dark-text-color: rgba(0,0,0,0.58);
-$orange-color: #FFAB58;
+$orange-color: #ec8d44;
 
 .user-page-content {
   float: left;
@@ -83,7 +83,7 @@ h2 {
 }
 
 .tab-content {
-  padding-top: 1em;
+  padding-top: 0em;
   li{ padding-bottom: 1em}
   ul{margin: 0;}
 }
@@ -166,7 +166,16 @@ p.answer {
 }
 
 
+.invite-form {
+  margin-left: 0em;
+  padding-top: 1em;
+  width: 80%;
+}
 
+.edit-form {
+  margin-left: 0em;
+  width: 100%;
+}
 
 
 

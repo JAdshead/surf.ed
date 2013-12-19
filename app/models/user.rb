@@ -19,6 +19,11 @@ class User < ActiveRecord::Base
   has_many :answers, :dependent => :destroy
   has_and_belongs_to_many :starred, :class_name => "Topic"
 
+
+  validates :name, :email, :password, presence: true
+  validates :name, length: { minimum: 3 }
+
+
   acts_as_voter
   has_karma :answers, :as => :submitter, :weight => 0.5
   

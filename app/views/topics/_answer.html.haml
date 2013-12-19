@@ -1,0 +1,33 @@
+- @answers.each do |answer|
+  .votes
+    - if can? :vote_up, :vote_down, answer
+      %br
+      - if current_user.voted_against?(answer)
+        .vote-thumb=image_tag "065.png"
+      - elsif current_user.voted_for?(answer)
+        .vote-thumb=image_tag "064.png"
+      - else 
+        .vote-thumb
+          = link_to vote_up_answer_path(answer), :method => :post, class: "form-button" do
+            =image_tag "064.png"
+        .vote-thumb
+          = link_to vote_down_answer_path(answer), :method => :post, class: "form-button" do
+            =image_tag "065.png"
+  %p
+    =link_to answer.user do
+      Answer Given by 
+      = answer.user.name
+  .answer-topic-show
+    %p= answer.answer
+  - if !!answer.votes
+    %p
+      Score : 
+      = (answer.votes_for - answer.votes_against)
+  %br
+  - if can? :edit, answer
+    = link_to 'Edit Answer', edit_answer_path(answer)
+  - if can? :destroy, answer
+    = link_to 'Delete Answer', answer, method: :delete
+  %hr
+
+= will_paginate @answers, param_name: "answer_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"

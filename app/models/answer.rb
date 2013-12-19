@@ -7,5 +7,5 @@ class Answer < ActiveRecord::Base
   belongs_to :topic
 
   validates :answer, presence: true
-
+  validates :answer, length: { minimum: 5 }
 end

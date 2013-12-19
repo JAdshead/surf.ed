@@ -1,3 +1,6 @@
+%ul.errors
+  - @topic.errors.full_messages.each do |error|
+    %li= error
 .devise-form
   %h2 Edit question
 

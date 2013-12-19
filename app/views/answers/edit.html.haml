@@ -1,3 +1,7 @@
+%ul.errors
+  - @topic.errors.full_messages.each do |error|
+    %li= error
+    
 %h3 Edit your answer
 
 = form_for(@answer) do |f|

@@ -6,8 +6,11 @@ class Topic < ActiveRecord::Base
   has_many :answers, :dependent => :destroy
 
   has_and_belongs_to_many :fans, :class_name => "User"
-  
   attr_accessible :question, :yt_video_id, :is_complete, :added_video, :user_id
+
+  validates :question, presence: true
+  validates :question, length: { minimum: 5 }
+
 
   scope :completes,   where(:is_complete => true)
   scope :incompletes, where(:is_complete => false)

@@ -1,7 +1,7 @@
 .header-margin
   %ul.errors
-  / - @album.errors.full_messages.each do |error|
-  /   %li= error
+    - @topic.errors.full_messages.each do |error|
+      %li= error
   .devise-form
     %h2 Ask a Question
 

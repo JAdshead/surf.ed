@@ -1,13 +1,14 @@
 $main-color: #3a8ea0; 
 $dark-text-color: rgba(0,0,0,0.58);
-$orange-color: #FFAB58;
+$orange-color: #ec8d44;
 
 .star-image img {
-  height: 2em;
+  height: 3em;
+  
 }
 
 .star-image img:hover {
-  height: 2.1em;
+  height: 3.1em;
 }
 
 .question-top-bar {
@@ -79,7 +80,40 @@ $orange-color: #FFAB58;
  }
 }
 
-
 .answer-topic-show {
   padding: 1em;
 }
+
+.question-side-bar {
+  border-right: 2px solid $orange-color;
+  float:left;
+  display: inline-block;
+  width: 20%;
+  min-width: 15em;
+
+}
+
+.question-content {
+  display: inline-block;
+  h2 {
+    padding-left: 1em;
+  }
+  iframe {
+    width: 100%;
+  }
+  width:80%;
+}
+
+.avatar-show img {
+  height: 4em;
+}
+
+.avatar-show {
+  padding-bottom: 1em;
+}
+
+.star-location {
+  text-align: center;
+  padding-bottom: 3em;
+}
+

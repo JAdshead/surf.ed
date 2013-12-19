@@ -13,9 +13,10 @@
       .site-header.cf
         %h1=link_to "SURF.ED", root_path
         .user-login
-          .icon
-            = link_to new_topic_path do
-              =image_tag '126.png'
+          -if can? :create, Topic
+            .icon
+              = link_to new_topic_path do
+                =image_tag '126.png'
           
           .icon    
             %a.search=image_tag 'search.png'

@@ -2,7 +2,8 @@ class TopicsController < ApplicationController
   
   load_and_authorize_resource :except => [:save_video]
 
-  def index 
+  def index
+    @topics = Topic.all 
     @topics_suggest = Topic.fuzzy_search params[:query]
     respond_to do |format|
       format.html # index.html.erb
@@ -45,6 +46,7 @@ class TopicsController < ApplicationController
 
   def show
     @answer = Answer.new
+    @answers = @topic.answers.paginate(page: params[:answer_page], per_page: 2).plusminus_tally.order('plusminus_tally DESC').all
   end
 
   def edit

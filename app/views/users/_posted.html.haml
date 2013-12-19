@@ -11,12 +11,13 @@
             %h4 Total Stars
             .answer-number
               %p= topic.score
-        .topic-answer.asked            
-          %h5 Top Answer
-          - @top_answer = topic.answers.plusminus_tally.order('plusminus_tally DESC').first
-          
-          =link_to @top_answer.user do
-            %p By #{@top_answer.user.name}
-          %p= @top_answer.answer
+        - if topic.answered
+          .topic-answer.asked            
+            %h5 Top Answer
+            - @top_answer = topic.answers.plusminus_tally.order('plusminus_tally DESC').first
+            
+            =link_to @top_answer.user do
+              %p By #{@top_answer.user.name}
+            %p= @top_answer.answer
 
     = will_paginate @user_questions, param_name: "questions_page", :page_links => false, previous_label: "PREVIOUS", next_label: "NEXT"
