@@ -54,16 +54,17 @@
     .answer-form-topics
       - if can? :create, @answer
         %h2 Add a Answer
-        / %ul.errors
-        /   - @answer.errors.full_messages.each do |error|
-        /     %li= error
+        %ul.errors
+          - @answer.errors.full_messages.each do |error|
+            %li= error
+        #form-submited
         .devise-form
           = form_for(@answer) do |f|
             = hidden_field_tag :topic_id, @topic.id
             = f.text_field :answer, placeholder: "Answer Question"
             %br/
             .comments-form-button.answer-button-topic
-              .form-button= f.submit
+              .form-button= f.submit 
     .answer-paginated
       =render "answer"
 
