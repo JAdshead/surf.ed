@@ -84,6 +84,7 @@ ul {
   margin: auto 2em;
   padding: 3em 2em;
   background-color: white;
+  min-height: 25em;
 }
 
 p {
@@ -429,6 +430,16 @@ input:focus {
 // *********
 // MORE NAV
 // *********
+
+#flash_alert {
+  color:white;
+  padding-left: 2em;
+}
+
+#flash_notice {
+  color:white;
+  padding-left: 2em;
+}
 
 a.search img {
   height: 2.5em;
