@@ -33,7 +33,9 @@
   - if @topic.answers.plusminus_tally.first
     .top-answer.cf
       - top = @topic.answers.plusminus_tally.order('plusminus_tally DESC').first
+      %p Top Answer 
       %h4= top.answer
+
       .votes
         - if can? :vote_up, :vote_down, top
           %br
