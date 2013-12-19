@@ -21,6 +21,10 @@ p, a {
   display: none;
 }
 
+input:focus {
+  outline: none;
+}
+
 /************
 * UTILITIES *
 ************/
