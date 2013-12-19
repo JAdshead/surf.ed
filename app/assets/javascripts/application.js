@@ -22,4 +22,4 @@
 //= require pagination.js
 //= require upload-button.js.coffee
 //= require user-page.js.coffee
-
+//= require bootstrap.min.js

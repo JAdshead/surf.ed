@@ -15,19 +15,19 @@
         .user-login
           -if can? :create, Topic
             .icon
-              = link_to new_topic_path do
+              = link_to new_topic_path, title: "ASK QUESTION", id: "new_question_icon", "data-placement" => "bottom" do
                 =image_tag '126.png'
           
           .icon    
-            %a.search=image_tag 'search.png'
+            %a.search=image_tag 'search.png', options = {title: "SEARCH", id: "search_question_icon", "data-placement" => "bottom" }
 
           - if user_signed_in?            
             .icon
-              = link_to destroy_user_session_path, method: :delete do
+              = link_to destroy_user_session_path, method: :delete, title: "LOG OUT", id: "log_out_icon", "data-placement" => "bottom"  do
                 =image_tag '130.png'
 
             .avatar-main.icon
-              = link_to current_user do
+              = link_to current_user,  title: "USER PROFILE", id: "user_profile_icon", "data-placement" => "bottom" do
                 = image_tag avatar_url(current_user)      
 
           - else

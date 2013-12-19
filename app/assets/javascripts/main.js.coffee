@@ -90,5 +90,29 @@ $ ->
   showTab()
 
 
+  $('#new_question_icon').tooltip()
+  $('#search_question_icon').tooltip()
+  $('#log_out_icon').tooltip()
+  $('#user_profile_icon').tooltip()
+  $('#star_question_icon').tooltip()
+  $('#topic_user_profile_icon').tooltip()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

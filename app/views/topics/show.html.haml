@@ -8,12 +8,12 @@
         - if current_user.voted_for?(@topic)
           .star-image=image_tag 'starred.png'
         -else
-          = link_to vote_up_topic_path(@topic), :method => :post, class: "form-button" do
+          = link_to vote_up_topic_path(@topic), :method => :post, class: "form-button",  title: "STAR QUESTION", id: "star_question_icon", "data-placement" => "top" do
             .star-image=image_tag 'star.png'
 
     .user-link
       %h4
-        =link_to @topic.user do
+        =link_to @topic.user, title: "VIEW USER PROFILE", id: "topic_user_profile_icon", "data-placement" => "top"  do
           .avatar-show=image_tag avatar_url(@topic.user)
           = @topic.user.name
     
