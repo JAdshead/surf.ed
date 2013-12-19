@@ -12,7 +12,10 @@
       .checkbox.form-button
         .checkbox-box
           .checkbox-value= f.check_box :added_video, {id: "boom-box"}
-          %p.checkbox-no No
-          %p.checkbox-yes Yes
+          %p.checkbox-no Click to Add Video
+          %p.checkbox-yes Now Choose Next
       .actions.form-button.submit
-        = f.submit "Next"
+        .checkbox-no
+          = f.submit "Submit"
+        .checkbox-yes
+          = f.submit "Next"

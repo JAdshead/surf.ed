@@ -8,8 +8,6 @@ $ ->
 
     changeCheckBox("#boom-box");
     
-
-
     $('.checkbox-no').toggle();
     $('.checkbox-yes').toggle();
 
