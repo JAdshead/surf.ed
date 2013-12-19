@@ -5,6 +5,6 @@
     = hidden_field_tag :token, @upload_info[:token]
     .file-upload.btn
       .p Click to choose video
-      = file_field_tag :file,{class: "uploadBtn upload"}
+      = file_field_tag :file, {class: "uploadBtn upload", required: true}
 
     .form-button= submit_tag "Upload and submit"

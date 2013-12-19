@@ -62,7 +62,7 @@
         .devise-form
           = form_for(@answer) do |f|
             = hidden_field_tag :topic_id, @topic.id
-            = f.text_field :answer, placeholder: "Write answer here..."
+            = f.text_field :answer, placeholder: "Write answer here...", required: true
             %br/
             .comments-form-button
               .form-button= f.submit "Submit Answer"
