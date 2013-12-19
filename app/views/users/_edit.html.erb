@@ -26,7 +26,7 @@
     <%= f.password_field :password_confirmation,  placeholder: "Password Confirmation"  %></div>
 
     <div class="current-password">
-    <%= f.password_field :current_password,  placeholder: "Current Password"  %></div>
+    <%= f.password_field :current_password,  placeholder: "Current Password (required)", required: true  %></div>
 
 
     <div class= "form-button"><%= f.submit "Update" %></div>
