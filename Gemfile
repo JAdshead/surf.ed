@@ -17,10 +17,6 @@ gem 'will_paginate', '~> 3.0'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem 'rmagick'
-# gem 'sinatra', '>= 1.3.0', :require => nil 
-# gem 'sidekiq' 
-# gem 'sidekiq-failures'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -40,6 +36,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem "rspec-rails"
+  gem "shoulda"
   gem "database_cleaner"
   gem "capybara"
   gem 'faker'
