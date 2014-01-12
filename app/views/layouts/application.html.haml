@@ -11,12 +11,12 @@
   %body
     .surf-container
       .site-header.cf
-        %h1=link_to "SURF.ED", root_path
+        %h1#logo-header=link_to "Surf.Ed", root_path
         .user-login
           -if can? :create, Topic
             .icon
               = link_to new_topic_path, title: "ASK QUESTION", id: "new_question_icon", "data-placement" => "bottom" do
-                =image_tag '126.png'
+                =image_tag 'question.png'
           
           .icon    
             %a.search=image_tag 'search.png', options = {title: "SEARCH", id: "search_question_icon", "data-placement" => "bottom" }
@@ -24,7 +24,7 @@
           - if user_signed_in?            
             .icon
               = link_to destroy_user_session_path, method: :delete, title: "LOG OUT", id: "log_out_icon", "data-placement" => "bottom"  do
-                =image_tag '130.png'
+                =image_tag 'on-off.png'
 
             .avatar-main.icon
               = link_to current_user,  title: "USER PROFILE", id: "user_profile_icon", "data-placement" => "bottom" do

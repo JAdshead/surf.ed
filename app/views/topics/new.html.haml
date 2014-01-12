@@ -8,7 +8,7 @@
     = form_for @topic, :url => upload_new_topic_path do |f|
       = f.text_field :question, placeholder: "Whats your question ?",autocomplete: :off, autofocus: true;
   
-      %h3 Do You want to Add Video ?
+      / %h3 Do You want to Add Video ?
       .checkbox.form-button
         .checkbox-box
           .checkbox-value= f.check_box :added_video, {id: "boom-box"}
@@ -16,6 +16,6 @@
           %p.checkbox-yes Now Choose Next
       .actions.form-button.submit
         .checkbox-no
-          = f.submit "Submit"
+          = f.submit "Submit Question"
         .checkbox-yes
           = f.submit "Next"

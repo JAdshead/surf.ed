@@ -17,6 +17,7 @@ development:
   encoding: unicode
   database: surf_ed_development
 
+
 test:
   adapter: postgresql
   encoding: unicode

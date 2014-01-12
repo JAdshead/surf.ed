@@ -36,8 +36,9 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem "rspec-rails"
-  gem "shoulda"
+  gem 'shoulda'
   gem "database_cleaner"
   gem "capybara"
   gem 'faker'
+
 end

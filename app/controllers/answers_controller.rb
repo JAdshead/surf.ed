@@ -54,7 +54,7 @@ class AnswersController < ApplicationController
     @answer = Answer.find params[:id]
     User.update_score(@answer.user)
 
-    # testin this
+    # test this
     User.invitaion_update(@answer.user)
     @answer.user.save
 

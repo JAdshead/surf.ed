@@ -36,20 +36,19 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  config.before(:suite) do 
+  config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
-
   config.before(:each) do 
     DatabaseCleaner.strategy = :truncation
   end
-
   config.before(:each) do 
     DatabaseCleaner.start
   end
-  
   config.after(:each) do 
     DatabaseCleaner.clean
   end
-
+  class ActionController::TestCase
+    include Devise::TestHelpers
+  end
 end

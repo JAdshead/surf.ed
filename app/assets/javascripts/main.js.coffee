@@ -1,4 +1,3 @@
-
 $ ->
   $('input.search-input').typeahead({                                
     name: 'topics',                                                          
