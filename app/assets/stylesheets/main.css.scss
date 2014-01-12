@@ -1,10 +1,36 @@
 $main-color: #3a8ea0; 
+// $main-color: #ec8d44; 
 $dark-text-color: rgba(0,0,0,0.58);
 $orange-color: #ec8d44;
-html, body {
+
+@font-face {
+    font-family: 'capture_itregular';
+    src: url('Capture_it-webfont.eot');
+    src: url('Capture_it-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Capture_it-webfont.woff') format('woff'),
+         url('Capture_it-webfont.ttf') format('truetype'),
+         url('Capture_it-webfont.svg#capture_itregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
   font-family: 'Maven Pro', sans-serif;
-  background-color: $main-color;
-  // background-image:url('surf_01.jpg'), no-repeat;
+  // background-color: $main-color;
+  background:url('surf_01.jpg')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ 
+  opacity:0.96;
+}
+
+
+
+h1, h2{
+  font-family: capture_itregular;
 }
 
 *, *:before, *:after {
@@ -24,6 +50,7 @@ p, a {
 input:focus {
   outline: none;
 }
+
 
 /************
 * UTILITIES *
@@ -54,7 +81,11 @@ input:focus {
 .site-header {
   background-color: white;
 
-  padding: 1em 2em;
+  // padding: 0em 2em;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   h1{
     float:left;
   }
@@ -63,7 +94,7 @@ input:focus {
 
 a:hover {
   text-decoration: none;
-  color: $orange-color;
+  color: $main-color;
 
 }
 
@@ -79,14 +110,14 @@ ul {
 }
 
 .head {
-  padding-top: 2em;
+  padding-top: 3em;
 }
 
 .head {
-  background-color: $main-color;
+  // background-color: $main-color;
 }
 .main{
-  background-color: $main-color;
+  // background-color: $main-color;
   padding: auto 5em;
   padding-bottom: 5em;
 
@@ -97,6 +128,7 @@ ul {
   padding: 3em 2em;
   background-color: white;
   min-height: 25em;
+  border-radius: 0.3em;
 }
 
 p {
@@ -116,7 +148,7 @@ p {
 
 .user-login {
   float: right;
-  font-size: 1.1em;
+  font-size: 1.2em;
   padding-top: auto;
   
 }
@@ -132,15 +164,18 @@ p {
 
 .avatar-main{
   display: inline;
+
 }
 
 .avatar-main img{
   width: 2.5em;
+  border-radius: 200px;
 }
 
 .avatar-user img {
   width: 5em;
   padding: auto;
+  border-radius: 200px;
 }
 
 .icon {
@@ -149,7 +184,7 @@ p {
 }
 
 .icon {
-
+  font-weight: bold;
 }
 
 /************
@@ -381,7 +416,8 @@ input:focus {
 }
 
 .menu .active h3{
-  font-weight: 500;
+  font-weight: 600;
+  font-family:  capture_itregular;
 }
 
 .menu h3, h4 {
@@ -465,6 +501,19 @@ a.search img {
 }
 .icon img {
   height: 2.5em;
+}
+
+
+
+
+h1#logo-header a {
+  font-family: capture_itregular;
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+
+}
+h1#logo-header a:hover {
+  color: $orange-color;
 }
 
 

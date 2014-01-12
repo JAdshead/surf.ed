@@ -1,4 +1,5 @@
 $main-color: #3a8ea0; 
+// $main-color: #ec8d44; 
 $dark-text-color: rgba(0,0,0,0.58);
 $orange-color: #ec8d44;
 
@@ -7,6 +8,8 @@ $orange-color: #ec8d44;
   float: left;
   padding: 0em;
   padding-right: 2em;
+  min-width: 18em;
+  
   h3:hover {
     color:$orange-color;
   }
@@ -39,5 +42,5 @@ $orange-color: #ec8d44;
 }
 .logo {
   text-align: center;
-  padding-bottom: 1em;
+  padding-bottom: 1.5em;
 }

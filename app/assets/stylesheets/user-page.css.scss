@@ -1,5 +1,6 @@
 $main-color-a: #3a8ea0; 
 $main-color: #3a8ea0; 
+// $main-color: #ec8d44; 
 $dark-text-color: rgba(0,0,0,0.58);
 $orange-color: #ec8d44;
 
@@ -14,17 +15,20 @@ $orange-color: #ec8d44;
 }
 
 .user-page-head {
-  min-width: 10em;
-  width: 20%;
-  background: white;
+  border-right: 2px solid $main-color;
   float: left;
-  padding-right: 1em;
-  border-right: 2px solid $orange-color;
+  padding: 0em;
+  padding-right: 2em;
+  min-width: 15em;
 }
 
 .active {
   font-weight: 500;
-  p {color: $orange-color;}
+  p {
+    color: $orange-color;
+    font-family: capture_itregular;
+
+  }
 }
 
 .tab {
@@ -35,6 +39,7 @@ $orange-color: #ec8d44;
 
 .tab :hover {
   font-weight: 600;
+  color:$orange-color;
 }
 
 .user-header{
