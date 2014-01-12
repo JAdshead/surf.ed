@@ -48,5 +48,8 @@ RSpec.configure do |config|
   config.after(:each) do 
     DatabaseCleaner.clean
   end
+  class ActionController::TestCase
+    include Devise::TestHelpers
+  end
 
 end

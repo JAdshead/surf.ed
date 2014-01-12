@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :starred, :class_name => "Topic"
 
 
-  validates :name, :email, presence: true
+  validates :name, :email,  presence: true
   validates :name, length: { minimum: 3 }
 
 
