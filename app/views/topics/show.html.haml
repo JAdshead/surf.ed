@@ -6,7 +6,7 @@
     .star-location
       - if can? :vote_up, @topic
         - if current_user.voted_for?(@topic)
-          .star-image=image_tag 'starred.png'
+          .starred-image=image_tag 'starred.png'
         -else
           = link_to vote_up_topic_path(@topic), :method => :post, class: "form-button",  title: "STAR QUESTION", id: "star_question_icon", "data-placement" => "top" do
             .star-image=image_tag 'star.png'
@@ -24,7 +24,8 @@
         = link_to "Delete", topic_path(@topic), :method => "delete"
 
 .question-content.cf
-  %h2= @topic.question
+  %h2= "#{@topic.user.name}'s Question"
+  %h3= @topic.question
   .question-video.cf
     
     - if @topic.yt_video_id
