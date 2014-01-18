@@ -27,7 +27,7 @@ class TopicsController < ApplicationController
     else 
       @topic.update_attributes(:is_complete => true)
       @topic.save
-      redirect_to @topic, :notice => "Question has been"
+      redirect_to @topic, :notice => "Question has been created"
     end
 
   end
